@@ -1,0 +1,21 @@
+{
+  "name": "ahuth.github.io",
+  "version": "0.1.0",
+  "description": "Homepage",
+  "main": "index.js",
+  "repository": "https://github.com/ahuth/ahuth.github.io",
+  "author": "Andrew Huth",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "next": "^5.1.0"
+  }
+}
