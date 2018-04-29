@@ -1,7 +1,7 @@
 ## Projects
 
-- [Raycast](ahuth.github.io/raycast)
-- [Waves](ahuth.github.io/waves)
-- [Frostbite](ahuth.github.io/frostbite)
-- [Orbital](ahuth.github.io/orbital)
-- [Conway](ahuth.github.io/conway)
+- [Raycast](https://ahuth.github.io/raycast)
+- [Waves](https://ahuth.github.io/waves)
+- [Frostbite](https://ahuth.github.io/frostbite)
+- [Orbital](https://ahuth.github.io/orbital)
+- [Conway](https://ahuth.github.io/conway)
