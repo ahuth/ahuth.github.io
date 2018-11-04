@@ -6,4 +6,5 @@
 - [Conway](https://github.com/ahuth/conway) - Cellular automata ([live demo](https://ahuth.github.io/conway))
 - [Evolved Salesman](https://github.com/ahuth/evolved-salesman) - Genetic algorithm solving the traveling salesman problem ([live-demo](https://ahuth.github.io/evolved-salesman))
 - [Cog](https://github.com/ahuth/cog) - Interactive SVG ([live demo](https://ahuth.github.io/cog))
+- [Raytrace](https://github.com/ahuth/raytrace) - Simple raytracer ([live demo](https://ahuth.github.io/raytrace))
 - [Standfast](https://github.com/ahuth/standfast) - Collect and share team updates via email
