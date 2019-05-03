@@ -1,4 +1,4 @@
 <a href="{{ project.repo }}" class="link underline blue">{{ project.name }}</a> - {{ project.description }}
-{% unless project.demo == false %}
+{% if project.demo %}
 (<a href="{{ project.demo }}" class="link underline blue">Live demo</a>)
-{% endunless %}
+{% endif %}
