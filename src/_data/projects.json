@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Raycast",
+    "repo": "https://github.com/ahuth/raycast",
+    "description": "Simple raycasting engine",
+    "demo": "https://ahuth.github.io/raycast"
+  },
+  {
+    "name": "Waves",
+    "repo": "https://github.com/ahuth/waves",
+    "description": "Combining oscillating waves",
+    "demo": "https://ahuth.github.io/waves"
+  },
+  {
+    "name": "Orbital",
+    "repo": "https://github.com/ahuth/orbital",
+    "description": "Simulation of gravitational forces",
+    "demo": "https://ahuth.github.io/orbital"
+  },
+  {
+    "name": "Conway",
+    "repo": "https://github.com/ahuth/conway",
+    "description": "Cellular automata",
+    "demo": "https://ahuth.github.io/conway"
+  },
+  {
+    "name": "Evolved Salesman",
+    "repo": "https://github.com/ahuth/evolved-salesman",
+    "description": "Genetic algorithm solving the traveling salesman problem",
+    "demo": "https://ahuth.github.io/evolved-salesman"
+  },
+  {
+    "name": "Cog",
+    "repo": "https://github.com/ahuth/cog",
+    "description": "Interactive SVG",
+    "demo": "https://ahuth.github.io/cog"
+  },
+  {
+    "name": "Raytrace",
+    "repo": "https://github.com/ahuth/raytrace",
+    "description": "Simple raytracer",
+    "demo": "https://ahuth.github.io/raytrace"
+  },
+  {
+    "name": "Standfast",
+    "repo": "https://github.com/ahuth/standfast",
+    "description": "Collect and share team updates via email",
+    "demo": false
+  },
+  {
+    "name": "Tetris",
+    "repo": "https://github.com/ahuth/tetris",
+    "description": "Classic tetris game",
+    "demo": "https://ahuth.github.io/tetris"
+  }
+]
