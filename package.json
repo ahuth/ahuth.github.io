@@ -5,6 +5,8 @@
   "description": "Personal homepage.",
   "scripts": {
     "build": "eleventy",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "start": "eleventy --serve"
   },
   "repository": {
@@ -15,6 +17,7 @@
   "license": "MIT",
   "homepage": "https://ahuth.github.io",
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.2"
+    "@11ty/eleventy": "^0.8.2",
+    "gh-pages": "^2.0.1"
   }
 }
