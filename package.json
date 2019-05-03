@@ -5,7 +5,9 @@
   "description": "Personal homepage.",
   "scripts": {
     "build": "eleventy",
+    "clean": "rm -rf build/",
     "deploy": "gh-pages -b master -d build",
+    "prebuild": "npm run clean",
     "predeploy": "npm run build",
     "start": "eleventy --serve"
   },
