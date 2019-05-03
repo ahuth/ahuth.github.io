@@ -3,10 +3,7 @@
   <ul class="f4 lh-copy">
     {% for project in projects %}
       <li>
-        <a href="{{ project.repo }}" class="link underline blue">{{ project.name }}</a> - {{ project.description }}
-        {% unless project.demo == false %}
-          (<a href="{{ project.demo }}" class="link underline blue">Live demo</a>)
-        {% endunless %}
+        {% include project.html with project %}
       </li>
     {% endfor %}
   </ul>
