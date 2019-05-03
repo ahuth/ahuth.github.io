@@ -1,0 +1,13 @@
+<section>
+  <h2 class="f2 lh-copy">Projects</h2>
+  <ul class="f4 lh-copy">
+    {% for project in projects %}
+      <li>
+        <a href="{{ project.repo }}" class="link underline blue">{{ project.name }}</a> - {{ project.description }}
+        {% unless project.demo == false %}
+          (<a href="{{ project.demo }}" class="link underline blue">Live demo</a>)
+        {% endunless %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
