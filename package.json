@@ -1,0 +1,20 @@
+{
+  "name": "ahuth.github.io",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Personal homepage.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahuth/ahuth.github.io.git"
+  },
+  "author": "Andrew Huth",
+  "license": "MIT",
+  "homepage": "https://ahuth.github.io",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.2"
+  }
+}
