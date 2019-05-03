@@ -1,35 +1,26 @@
-<!doctype html>
-
-<html class="dark-mode" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Andrew Huth</title>
-    <meta name="description" content="Andrew Huth homepage">
-    <link rel="icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="assets/tachyons.min.css">
-  </head>
-
-  <body class="bg-black moon-gray sans-serif">
-    <main class="mw5 mw7-ns center pa3 ph5-ns">
-      <h1 class="f1 lh-title">Andrew Huth</h1>
-      <div class="f4 lh-copy">
-        <a href="https://github.com/ahuth" class="link underline blue">GitHub profile</a>
-        <br />
-        <a href="mailto:andrew@huth.me" class="link underline blue">andrew@huth.me</a>
-      </div>
-      <section>
-        <h2 class="f2 lh-copy">Projects</h2>
-        <ul class="f4 lh-copy">
-          {% for project in projects %}
-            <li>
-              <a href="{{ project.repo }}" class="link underline blue">{{ project.name }}</a> - {{ project.description }}
-              {% unless project.demo == false %}
-                (<a href="{{ project.demo }}" class="link underline blue">Live demo</a>)
-              {% endunless %}
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+---
+layout: layout.html
+title: Andrew Huth
+description: Andrew Huth's homepage
+---
+<main class="mw5 mw7-ns center pa3 ph5-ns">
+  <h1 class="f1 lh-title">Andrew Huth</h1>
+  <div class="f4 lh-copy">
+    <a href="https://github.com/ahuth" class="link underline blue">GitHub profile</a>
+    <br />
+    <a href="mailto:andrew@huth.me" class="link underline blue">andrew@huth.me</a>
+  </div>
+  <section>
+    <h2 class="f2 lh-copy">Projects</h2>
+    <ul class="f4 lh-copy">
+      {% for project in projects %}
+        <li>
+          <a href="{{ project.repo }}" class="link underline blue">{{ project.name }}</a> - {{ project.description }}
+          {% unless project.demo == false %}
+            (<a href="{{ project.demo }}" class="link underline blue">Live demo</a>)
+          {% endunless %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>
