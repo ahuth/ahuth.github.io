@@ -1,6 +1,6 @@
 # ahuth.github.io
 
-Personal homepage, built with [Eleventy](https://www.11ty.io/docs/).
+Personal homepage, built with [Eleventy](https://www.11ty.io/docs/). Theme based on [Jekyons](https://github.com/joshosbrn/jekyons).
 
 ## Branches
 
