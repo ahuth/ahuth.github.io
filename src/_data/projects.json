@@ -1,21 +1,9 @@
 [
   {
-    "name": "Raycast",
-    "repo": "https://github.com/ahuth/raycast",
-    "description": "Simple raycasting engine in the form of a basic first person experience, written in React.",
-    "demo": "https://ahuth.github.io/raycast"
-  },
-  {
-    "name": "Waves",
-    "repo": "https://github.com/ahuth/waves",
-    "description": "Combine two oscillating waves into a third. Features form and mouse-dragging controls.",
-    "demo": "https://ahuth.github.io/waves"
-  },
-  {
-    "name": "Orbital",
-    "repo": "https://github.com/ahuth/orbital",
-    "description": "Simulation of gravitational forces between two smaller and one large body in space.",
-    "demo": "https://ahuth.github.io/orbital"
+    "name": "Cog",
+    "repo": "https://github.com/ahuth/cog",
+    "description": "Interactive SVG",
+    "demo": "https://ahuth.github.io/cog"
   },
   {
     "name": "Conway",
@@ -30,10 +18,16 @@
     "demo": "https://ahuth.github.io/evolved-salesman"
   },
   {
-    "name": "Cog",
-    "repo": "https://github.com/ahuth/cog",
-    "description": "Interactive SVG",
-    "demo": "https://ahuth.github.io/cog"
+    "name": "Orbital",
+    "repo": "https://github.com/ahuth/orbital",
+    "description": "Simulation of gravitational forces between two smaller and one large body in space.",
+    "demo": "https://ahuth.github.io/orbital"
+  },
+  {
+    "name": "Raycast",
+    "repo": "https://github.com/ahuth/raycast",
+    "description": "Simple raycasting engine in the form of a basic first person experience, written in React.",
+    "demo": "https://ahuth.github.io/raycast"
   },
   {
     "name": "Raytrace",
@@ -52,5 +46,11 @@
     "repo": "https://github.com/ahuth/tetris",
     "description": "Classic tetris game of falling blocks.",
     "demo": "https://ahuth.github.io/tetris"
+  },
+  {
+    "name": "Waves",
+    "repo": "https://github.com/ahuth/waves",
+    "description": "Combine two oscillating waves into a third. Features form and mouse-dragging controls.",
+    "demo": "https://ahuth.github.io/waves"
   }
 ]

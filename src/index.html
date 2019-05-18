@@ -5,14 +5,14 @@ description: Andrew Huth's homepage
 ---
 <header class="ma4 ma5-ns">
   <h1 class="f2 lh-title">Andrew Huth</h1>
-  <div class="mb6 db">
+  <div class="mb4 db">
     <a class="link ba mr3 br2 pa3 f5 mb3 dib white dim" href="https://github.com/ahuth">GitHub profile</a>
     <a class="link ba mr3 br2 pa3 f5 mb3 dib white dim" href="mailto:andrew@huth.me">andrew@huth.me</a>
   </div>
 </header>
 <main>
   <h2 class="f2 lh-copy ml4 ml5-ns">Projects</h2>
-  <ul class="f4 lh-copy list ma4 ma5-ns pa0">
+  <ul class="f4 lh-copy list ma4 ma5-ns pa0 mt0 mt0-ns">
     {% for project in projects %}
       <li class="w-33-l pr4 mb5 fl-l mt4 cf-4th">
         <h3 class="f4"><a class="white lh-copy" href="{{ project.repo }}">{{ project.name }}</a></h3>
