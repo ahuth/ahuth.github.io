@@ -9,9 +9,9 @@ Note that the branches here are a little unusual. The built files for a Github p
 ## Usage
 
 For local development:
-- Run `npm start`
+- Run `yarn start`
 - Visit `localhost:8080`
 - The server will hot reload on any changes.
 
 To deploy:
-- Run `npm run deploy`
+- Run `yarn run deploy`
