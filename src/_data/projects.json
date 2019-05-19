@@ -8,31 +8,31 @@
   {
     "name": "Conway",
     "repo": "https://github.com/ahuth/conway",
-    "description": "Classic 'Conway's game of life' cellular automata",
+    "description": "Conway's game of life, which is a classic cellular automaton.",
     "demo": "https://ahuth.github.io/conway"
   },
   {
     "name": "Evolved Salesman",
     "repo": "https://github.com/ahuth/evolved-salesman",
-    "description": "Genetic algorithm solving the traveling salesman problem",
+    "description": "Genetic algorithm solving the traveling salesman problem.",
     "demo": "https://ahuth.github.io/evolved-salesman"
   },
   {
     "name": "Orbital",
     "repo": "https://github.com/ahuth/orbital",
-    "description": "Simulation of gravitational forces between two smaller and one large body in space.",
+    "description": "Simulation of gravitational forces between multiple bodies in space.",
     "demo": "https://ahuth.github.io/orbital"
   },
   {
     "name": "Raycast",
     "repo": "https://github.com/ahuth/raycast",
-    "description": "Simple raycasting engine in the form of a basic first person experience, written in React.",
+    "description": "Run around a maze with this raycasting engine, similar to Wolfenstein 3D. In React.",
     "demo": "https://ahuth.github.io/raycast"
   },
   {
     "name": "Raytrace",
     "repo": "https://github.com/ahuth/raytrace",
-    "description": "Simple raytracer of a couple small moons in orbit around a planet.",
+    "description": "Simple raytracer of a couple small moons in orbit around a planet. Based on <a class=\"white\" href=\"https://tmcw.github.io/literate-raytracer/\">an article</a> on the subject.",
     "demo": "https://ahuth.github.io/raytrace"
   },
   {
@@ -44,13 +44,13 @@
   {
     "name": "Tetris",
     "repo": "https://github.com/ahuth/tetris",
-    "description": "Classic tetris game of falling blocks.",
+    "description": "The classic tile-matching, puzzle-solving, block-falling game that we all know and love.",
     "demo": "https://ahuth.github.io/tetris"
   },
   {
     "name": "Waves",
     "repo": "https://github.com/ahuth/waves",
-    "description": "Combine two oscillating waves into a third. Features form and mouse-dragging controls.",
+    "description": "Combine two oscillating waves into a third.",
     "demo": "https://ahuth.github.io/waves"
   }
 ]
