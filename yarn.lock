@@ -40,6 +40,11 @@
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
+"@ahuth/styles@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ahuth/styles/-/styles-0.1.0.tgz#4543c4a96e410f4aa4b49efe0cfa22a1ffc94271"
+  integrity sha512-ayuHtpiGuFNAISUD8K9JhrFUGGCg/nDATfotRF3w1t94r04athPLFCtBiBh+eGuBn8EQgPfvJXd5mflLg57pBg==
+
 "@babel/parser@^7.0.0":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.4.5.tgz#04af8d5d5a2b044a2a1bffacc1e5e6673544e872"

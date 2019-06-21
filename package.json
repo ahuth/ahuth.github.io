@@ -21,5 +21,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.8.2",
     "gh-pages": "^2.0.1"
+  },
+  "dependencies": {
+    "@ahuth/styles": "^0.1.0"
   }
 }
