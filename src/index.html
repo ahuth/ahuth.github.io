@@ -3,24 +3,24 @@ layout: layout.html
 title: Andrew Huth
 description: Andrew Huth's homepage
 ---
-<header class="ma4 ma5-ns">
-  <h1 class="f2 lh-title">Andrew Huth</h1>
-  <div class="mb4 db">
-    <a class="link ba mr3 br2 pa3 f5 mb3 dib white dim" href="https://github.com/ahuth">GitHub profile</a>
-    <a class="link ba mr3 br2 pa3 f5 mb3 dib white dim" href="mailto:andrew@huth.me">andrew@huth.me</a>
+<header class="">
+  <h1 class="">Andrew Huth</h1>
+  <div class="">
+    <a class="" href="https://github.com/ahuth">GitHub profile</a>
+    <a class="" href="mailto:andrew@huth.me">andrew@huth.me</a>
   </div>
 </header>
 <main>
-  <h2 class="f2 lh-copy ml4 ml5-ns">Projects</h2>
-  <ul class="f4 lh-copy list ma4 ma5-ns pa0 mt0 mt0-ns flex flex-wrap">
+  <h2 class="">Projects</h2>
+  <ul class="">
     {% for project in projects %}
-      <li class="w-33-l pr4 mb5 mt4">
+      <li class="">
         <section>
-          <h3 class="f4"><a class="white lh-copy" href="{{ project.repo }}">{{ project.name }}</a></h3>
-          <p class="lh-copy">{{ project.description }}</p>
-          <a class="white o-50" href="{{ project.repo }}">Source code</a>
+          <h3 class=""><a class="" href="{{ project.repo }}">{{ project.name }}</a></h3>
+          <p class="">{{ project.description }}</p>
+          <a class="" href="{{ project.repo }}">Source code</a>
           {% if project.demo %}
-            <a class="white o-50" href="{{ project.demo }}">Live demo</a>
+            <a class="" href="{{ project.demo }}">Live demo</a>
           {% endif %}
         </section>
       </li>
