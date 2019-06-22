@@ -11,15 +11,17 @@ description: Andrew Huth's homepage
   </div>
 </header>
 <main>
-  <h2>Projects</h2>
-  <ul>
-    {% for project in projects %}
-      <li>
-        <a href="{{ project.repo }}">{{ project.name }}</a>
-        {% if project.demo %}
-          (<a href="{{ project.demo }}">Demo</a>)
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      {% for project in projects %}
+        <li>
+          <a href="{{ project.repo }}">{{ project.name }}</a>
+          {% if project.demo %}
+            (<a href="{{ project.demo }}">Demo</a>)
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 </main>
