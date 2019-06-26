@@ -1,3 +1,15 @@
 a {
   color: deepskyblue;
 }
+
+.hbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.vbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -3,27 +3,29 @@ layout: layout.html
 title: Andrew Huth
 description: Andrew Huth's homepage
 ---
-<div>
-  <header>
-    <h1>Andrew Huth</h1>
-    <div>
-      <a href="https://github.com/ahuth">GitHub profile</a>
-      <a href="mailto:andrew@huth.me">andrew@huth.me</a>
-    </div>
-  </header>
-  <main>
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        {% for project in projects %}
-          <li>
-            <a href="{{ project.repo }}">{{ project.name }}</a>
-            {% if project.demo %}
-              (<a href="{{ project.demo }}">Demo</a>)
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
-  </main>
+<div class="hbox">
+  <div class="vbox">
+    <header>
+      <h1>Andrew Huth</h1>
+      <div>
+        <a href="https://github.com/ahuth">GitHub profile</a>
+        <a href="mailto:andrew@huth.me">andrew@huth.me</a>
+      </div>
+    </header>
+    <main class="hbox">
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          {% for project in projects %}
+            <li>
+              <a href="{{ project.repo }}">{{ project.name }}</a>
+              {% if project.demo %}
+                (<a href="{{ project.demo }}">Demo</a>)
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </div>
 </div>
