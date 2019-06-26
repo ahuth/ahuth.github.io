@@ -1,31 +1,17 @@
-:focus {
-  outline-color: hotpink;
-}
+/* Ensure the focus outlines are visible on the black background. */
+:focus { outline-color: hotpink; }
 
-a {
-  color: deepskyblue;
-}
-
-body {
-  line-height: 1.5;
-}
+a { color: deepskyblue; }
+body { line-height: 1.5; }
 
 .wrapper {
-  max-width: 480px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.header {
-  grid-area: header;
-}
-
-.projects {
-  grid-area: projects;
-}
-
-.articles {
-  grid-area: articles;
-}
+.header { grid-area: header; }
+.projects { grid-area: projects; }
+.articles { grid-area: articles; }
 
 .grid {
   display: grid;
