@@ -1,3 +1,7 @@
+:focus {
+  outline-color: hotpink;
+}
+
 a {
   color: deepskyblue;
 }
