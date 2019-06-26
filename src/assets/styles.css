@@ -6,6 +6,10 @@ a {
   color: deepskyblue;
 }
 
+body {
+  line-height: 1.5;
+}
+
 .hbox {
   display: flex;
   flex-direction: row;
