@@ -10,14 +10,37 @@ body {
   line-height: 1.5;
 }
 
-.hbox {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.wrapper {
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-.vbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.header {
+  grid-area: header;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.articles {
+  grid-area: articles;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header"
+    "projects"
+    "articles";
+}
+
+@media (min-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "projects articles";
+  }
 }
