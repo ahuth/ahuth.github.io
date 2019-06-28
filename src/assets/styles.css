@@ -5,25 +5,12 @@ a { color: deepskyblue; }
 body { line-height: 1.5; }
 
 .wrapper {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.projects { grid-area: projects; }
-.articles { grid-area: articles; }
-
-.grid {
+.auto-grid {
   display: grid;
   grid-gap: 1rem;
-  grid-template-areas:
-    "projects"
-    "articles";
-}
-
-@media (min-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "projects articles";
-  }
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }

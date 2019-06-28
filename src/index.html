@@ -12,8 +12,8 @@ description: Andrew Huth's homepage
       <a href="mailto:andrew@huth.me">andrew@huth.me</a>
     </div>
   </header>
-  <main class="grid">
-    <section class="projects">
+  <main class="auto-grid">
+    <section>
       <h2>Projects</h2>
       <ul>
         {% for project in projects %}
@@ -26,7 +26,7 @@ description: Andrew Huth's homepage
         {% endfor %}
       </ul>
     </section>
-    <section class="articles">
+    <section>
       <h2>Articles</h2>
       <ol reversed>
         {% for post in collections.posts %}
