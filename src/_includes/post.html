@@ -1,9 +1,11 @@
 ---
 layout: layout.html
 ---
-<a href="{{ '/' | url }}">← Home</a>
+<div class="wrapper">
+  <a href="{{ '/' | url }}">← Home</a>
 
-<main>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-</main>
+  <main>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </main>
+</div>
