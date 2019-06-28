@@ -9,7 +9,6 @@ body { line-height: 1.5; }
   margin: 0 auto;
 }
 
-.header { grid-area: header; }
 .projects { grid-area: projects; }
 .articles { grid-area: articles; }
 
@@ -17,7 +16,6 @@ body { line-height: 1.5; }
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
-    "header"
     "projects"
     "articles";
 }
@@ -26,7 +24,6 @@ body { line-height: 1.5; }
   .grid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "header header"
       "projects articles";
   }
 }
