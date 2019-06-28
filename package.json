@@ -6,7 +6,7 @@
   "scripts": {
     "build": "eleventy",
     "clean": "rm -rf build/",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b master -d build -t",
     "prebuild": "npm run clean",
     "predeploy": "npm run build",
     "start": "eleventy --serve"
