@@ -5,7 +5,7 @@ date: 2019-07-02
 
 One thing has amazed me the most while learning [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout): using [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) to change the layout at different media queries.
 
-Imagine something a mobile-first baseline of:
+Imagine a mobile-first baseline of:
 
 ```css
 #page {
