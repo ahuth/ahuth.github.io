@@ -24,7 +24,3 @@ Such a great article, from a former engineering manager at Etsy. Covers a lot ab
 ## 5. [Accessibility According to Actual People with Disabilities](https://axesslab.com/accessibility-according-to-pwd/), by Hampus Sethfors
 
 It's all too easy to be focused on standards and practices, and to get disconnected from the experiences of actual users. Here we hear from users in their own words.
-
-- - -
-
-If you enjoyed these, or have any that you like, let me know at [andrew@huth.me](mailto:andrew@huth.me).
