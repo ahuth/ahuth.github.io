@@ -1,20 +1,23 @@
 ---
 layout: layout.html
 ---
+{% assign formattedDate = date | date: '%Y-%m-%d' %}
+
 <div class="wrapper">
   <nav>
     <a href="{{ '/' | url }}">← Home</a>
   </nav>
   <main>
-    <h1>{{ title }}</h1>
-    {% assign formattedDate = date | date: '%Y-%m-%d' %}
-    <time datetime="{{ formattedDate }}">{{ formattedDate }}</time>
     <article>
+      <header>
+        <h1>{{ title }}</h1>
+        <time datetime="{{ formattedDate }}">{{ formattedDate }}</time>
+      </header>
       {{ content | safe }}
+      <footer>
+        <hr />
+        <p>Let me know your thoughts at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
     </article>
-    <hr />
-    <footer>
-      <p>Let me know your thoughts at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
-    </footer>
   </main>
 </div>
