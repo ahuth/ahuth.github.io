@@ -5,14 +5,19 @@ date: 2019-07-05
 
 Spoiler alert: [React refs](https://reactjs.org/docs/refs-and-the-dom.html) are immutable references to mutable values.
 
-- How we usually think about refs.
-  - As references to DOM elements, often for styling
-  - Give example
+Traditionally we think about refs as a way of interacting with raw DOM elements. Often for managing focus or drawing on a canvas. Something like:
 
-- Enter hooks.
-  - Hooks changed this
-  - Started to make the connection with https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-  - Cemented when implementing my own hooks for https://github.com/ahuth/tetris
+```jsx
+class Foo extends Component {
+  canvasRef = createRef();
+
+  render() {
+    return <canvas ref={this.canvasRef} />;
+  }
+}
+```
+
+[React hooks](https://reactjs.org/docs/hooks-overview.html) changed my understanding. Starting with Dan Abramov's excellent [Making setInterval Declarative with React Hooks](https://overreacted.io/making-setinterval-declarative-with-react-hooks/), it became clear while writing [Tetris in React](https://github.com/ahuth/tetris) that hooks require us idenitify and manage values that change with every render.
 
 - Some problems we face when using hooks.
   - Hooks need stable references to prevent unnecessary setup and tear down
