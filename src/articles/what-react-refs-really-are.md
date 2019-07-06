@@ -26,6 +26,35 @@ class Foo extends Component {
     - Timeout/interval ids
     - Callback functions (for a slightly nicer API)
 
+Using the `setInterval` example, we may be tempted to write this hook:
+
+```js
+import { useEffect } from 'react';
+
+function useInterval(callback, interval) {
+  useEffect(() => {
+    const id = setInterval(callback, interval);
+    return () => clearInterval(id);
+  }, [callback, interval]);
+}
+```
+
+and use it like so:
+
+```jsx
+function MyComponent() {
+  useInterval(() => {
+    // do something...
+  });
+
+  return <div>{/* stuff */}</div>;
+}
+```
+
+If we use this hook, everything will seem like it's working (see a [live demo here](https://codesandbox.io/s/react-refs-hooks-1-z68pv)). However, if we add a `console.log` inside the `useEffect` callback, we'll see that our interval is repeatedly cleaned up and set up again. Not ideal.
+
+What's happening is that a new "callback" is passed to the hook for every render, causing the `useEffect` hook to clean itself up. In our case, this clears the interval.
+
 - How refs help them.
   - With refs we can have stable references to these things
   - Avoiding unnecessary setup/tear down
