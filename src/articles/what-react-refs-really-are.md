@@ -17,7 +17,7 @@ class Foo extends Component {
 }
 ```
 
-[React hooks](https://reactjs.org/docs/hooks-overview.html) changed my understanding. Starting with Dan Abramov's excellent [Making setInterval Declarative with React Hooks](https://overreacted.io/making-setinterval-declarative-with-react-hooks/), it became clear while writing [Tetris in React](https://github.com/ahuth/tetris) that hooks require us idenitify and manage values that change with every render.
+[React hooks](https://reactjs.org/docs/hooks-overview.html) changed my understanding. Starting with Dan Abramov's excellent [Making setInterval Declarative with React Hooks](https://overreacted.io/making-setinterval-declarative-with-react-hooks/), it became clear while writing [Tetris in React](https://github.com/ahuth/tetris) that hooks require us to idenitify and manage values that change with every render.
 
 - Some problems we face when using hooks.
   - Hooks need stable references to prevent unnecessary setup and tear down
