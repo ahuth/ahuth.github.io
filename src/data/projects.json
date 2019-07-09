@@ -39,7 +39,7 @@
     "name": "Standfast",
     "repo": "https://github.com/ahuth/standfast",
     "description": "Rails application for collecting and sharing team updates via email.",
-    "demo": false
+    "demo": ""
   },
   {
     "name": "Tetris",
