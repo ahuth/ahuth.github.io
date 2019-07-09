@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import useArticles from '../hooks/useArticles';
-import useProjects from '../hooks/useProjects';
 import './index.css';
 
-export default function Index() {
-  const articles = useArticles();
-  const projects = useProjects();
+export default function Index({ data }) {
+  const articles = data.allMarkdownRemark.nodes;
+  const projects = data.allProjectsJson.nodes;
 
   return (
     <Layout>
@@ -52,3 +50,25 @@ export default function Index() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query IndexQuery {
+    allProjectsJson(sort: { fields: name }) {
+      nodes {
+        name
+        repo
+        demo
+      }
+    }
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+`;
