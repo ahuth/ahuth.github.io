@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "deploy": "gh-pages -b master -d build -t",
+    "deploy": "gh-pages -b master -d public -t",
     "predeploy": "npm run build",
     "start": "gatsby develop"
   },
