@@ -3,6 +3,9 @@
   "version": "3.1.0",
   "private": true,
   "description": "Personal homepage.",
+  "author": "Andrew Huth",
+  "license": "MIT",
+  "homepage": "https://ahuth.github.io",
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
@@ -10,13 +13,6 @@
     "predeploy": "npm run build",
     "start": "gatsby develop"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ahuth/ahuth.github.io.git"
-  },
-  "author": "Andrew Huth",
-  "license": "MIT",
-  "homepage": "https://ahuth.github.io",
   "dependencies": {
     "@ahuth/styles": "^0.1.0",
     "gatsby": "^2.13.9",
