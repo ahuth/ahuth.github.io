@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from './Layout';
+import Seo from './Seo';
 
 export default function Article({ data }) {
   const article = data.markdownRemark;
 
   return (
     <Layout>
+      <Seo title={article.frontmatter.title} />
       <nav>
         <Link to="/">← Home</Link>
       </nav>

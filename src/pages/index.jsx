@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import './index.css';
 
 export default function Index({ data }) {
@@ -9,6 +10,7 @@ export default function Index({ data }) {
 
   return (
     <Layout>
+      <Seo />
       <header>
         <h1>Andrew Huth</h1>
         <div>
