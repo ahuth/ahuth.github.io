@@ -1,6 +1,6 @@
 # ahuth.github.io
 
-Personal homepage, built with [Eleventy](https://www.11ty.io/docs/). Theme based on [Jekyons](https://github.com/joshosbrn/jekyons).
+Personal homepage, built with [Gatsby](https://www.gatsbyjs.org/).
 
 ## Branches
 
@@ -10,7 +10,7 @@ Note that the branches here are a little unusual. The built files for a Github p
 
 For local development:
 - Run `yarn start`
-- Visit `localhost:8080`
+- Visit `localhost:8000`
 - The server will hot reload on any changes.
 
 To deploy:
