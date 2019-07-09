@@ -30,7 +30,7 @@ export default function Article({ data }) {
 }
 
 export const query = graphql`
-  query ArticleBySlugQuery($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         date(formatString: "YYYY-MM-DD")

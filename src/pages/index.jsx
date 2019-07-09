@@ -54,7 +54,7 @@ export default function Index({ data }) {
 }
 
 export const query = graphql`
-  query IndexQuery {
+  query {
     allProjectsJson(sort: { fields: name }) {
       nodes {
         name
