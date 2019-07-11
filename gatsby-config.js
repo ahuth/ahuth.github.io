@@ -7,7 +7,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
-    'gatsby-plugin-purgecss',
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        ignore: ['dracula-prism.css'],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
