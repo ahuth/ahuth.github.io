@@ -1,10 +1,14 @@
 import React from 'react';
+import Analytics from './Analytics';
 import './Layout.css';
 
 export default function Layout({ children }) {
   return (
-    <div className="wrapper">
-      {children}
-    </div>
+    <React.Fragment>
+      <div className="wrapper">
+        {children}
+      </div>
+      <Analytics />
+    </React.Fragment>
   );
 }
