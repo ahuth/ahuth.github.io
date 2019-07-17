@@ -1,30 +1,33 @@
 {
   "name": "ahuth.github.io",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "description": "Personal homepage.",
-  "scripts": {
-    "build": "eleventy",
-    "clean": "rm -rf build/",
-    "deploy": "gh-pages -b master -d build -t",
-    "prebuild": "npm run clean",
-    "predeploy": "npm run build",
-    "start": "eleventy --serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ahuth/ahuth.github.io.git"
-  },
   "author": "Andrew Huth",
   "license": "MIT",
   "homepage": "https://ahuth.github.io",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.8.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "gh-pages": "^2.0.1",
-    "prism-themes": "^1.1.0"
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "deploy": "gh-pages -b master -d public -t",
+    "predeploy": "npm run build",
+    "serve": "gatsby serve",
+    "start": "gatsby develop"
   },
   "dependencies": {
-    "@ahuth/styles": "^0.1.0"
+    "@ahuth/styles": "^0.1.0",
+    "gatsby": "^2.13.20",
+    "gatsby-plugin-fathom": "^1.1.0",
+    "gatsby-plugin-purgecss": "^4.0.0",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-remark-prismjs": "^3.3.3",
+    "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-transformer-json": "^2.2.2",
+    "gatsby-transformer-remark": "^2.6.5",
+    "gh-pages": "^2.0.1",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   }
 }
