@@ -3,6 +3,8 @@ title: What React Refs Really Are
 date: 2019-07-16
 ---
 
+Spoiler alert: React refs are stable references to values that can change.
+
 Traditionally we think about refs as a way of interacting with raw DOM elements. Often for managing focus or drawing on a canvas. Something like:
 
 ```jsx
