@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import './index.css';
@@ -14,6 +15,7 @@ export default function Index({ data }) {
       <header>
         <h1>Andrew Huth</h1>
         <div>
+          <Bio />
           <a href="https://github.com/ahuth">github.com/ahuth</a>
           <br />
           <a href="mailto:andrew@huth.me">andrew@huth.me</a>
