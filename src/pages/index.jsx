@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
+import Projects from '../components/Projects';
 import Seo from '../components/Seo';
 import './index.css';
 
 export default function Index({ data }) {
   const articles = data.allMarkdownRemark.nodes;
-  const projects = data.allProjectsJson.nodes;
 
   return (
     <Layout>
@@ -22,20 +22,7 @@ export default function Index({ data }) {
         </div>
       </header>
       <main className="auto-grid">
-        <section>
-          <h2>Projects</h2>
-          <ul>
-            {projects.map((project) => {
-              return (
-                <li key={project.name}>
-                  <a href={project.repo}>{project.name}</a>
-                  {' '}
-                  {project.demo && <a href={project.demo}>(Demo)</a>}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+        <Projects />
         <section>
           <h2>Articles</h2>
           <ol reversed>
@@ -57,13 +44,6 @@ export default function Index({ data }) {
 
 export const query = graphql`
   query {
-    allProjectsJson(sort: { fields: name }) {
-      nodes {
-        name
-        repo
-        demo
-      }
-    }
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         fields {
