@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 
 export default function HTML({
@@ -9,7 +10,7 @@ export default function HTML({
   preBodyComponents,
 }) {
   return (
-    <html {...htmlAttributes}>
+    <html lang="en" {...htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
