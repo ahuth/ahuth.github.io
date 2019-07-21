@@ -4452,6 +4452,11 @@ gatsby-plugin-fathom@^1.1.0:
     "@babel/runtime" "7.1.2"
     react "16.5.2"
 
+gatsby-plugin-no-javascript@^1.1.2:
+  version "1.1.2"
+  resolved "https://npm.d.musta.ch/gatsby-plugin-no-javascript/-/gatsby-plugin-no-javascript-1.1.2.tgz#d8ac3c1aac7a090e88791e4c4df00c5a1ba5d742"
+  integrity sha1-2Kw8Gqx6CQ6IeR5MTfAMWhul10I=
+
 gatsby-plugin-page-creator@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.5.tgz#723fc0392a67978cab649a402ad88f6f06b74e4c"
