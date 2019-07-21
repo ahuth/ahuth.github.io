@@ -1,6 +1,3 @@
-@import '~@ahuth/styles';
-@import '../assets/dracula-prism.css';
-
 /* Ensure the focus outlines are visible on the black background. */
 :focus { outline-color: hotpink; }
 
