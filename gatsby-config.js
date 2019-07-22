@@ -41,6 +41,5 @@ module.exports = {
         siteId: 'LDLYFTFN',
       },
     },
-    'gatsby-plugin-no-javascript',
   ],
 };
