@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        ignore: ['dracula-prism.css'],
+        ignore: ['prism-theme.css'],
       },
     },
     {
