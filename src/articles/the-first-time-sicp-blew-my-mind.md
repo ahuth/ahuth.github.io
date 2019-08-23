@@ -36,7 +36,7 @@ function getSecond(pair) {
 }
 ```
 
-There is another way. You can use closures to create a data structure out of nothing but functions.
+There is another way. We can use closures to create a data structure out of nothing but functions.
 
 ```js
 // Slightly simplified from the implementation in the book.
@@ -54,4 +54,6 @@ function getSecond(pair) {
 }
 ```
 
-Harold Abelson mentions in the [amazing accompanying lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. His point (I think) was about the nature of abstractions. In any case, it amazed me.
+Harold Abelson mentions in the [amazing accompanying lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. His point (I think) was about the nature of abstractions. But I wasn't terrified - it blew my mind, and I fell in love with the book.
+
+See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
