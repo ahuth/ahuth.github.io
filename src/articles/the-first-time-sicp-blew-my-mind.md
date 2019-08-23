@@ -54,6 +54,8 @@ function getSecond(pair) {
 }
 ```
 
-Harold Abelson mentions in the [amazing accompanying lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. His point (I think) was about the nature of abstractions. But I wasn't terrified - it blew my mind, and I fell in love with the book.
+Harold Abelson mentions in the [amazing accompanying lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. His point (I think) was about the nature of abstractions. But I wasn't terrified - I was ecstatic, and fell in love with the book. It felt like some deeper secret of the universe had been revealed to me.
+
+Looking back on it, the example doesn't feel that mind-blowing anymore. But there's so much wisdom in the book. You just have to work for it.
 
 See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
