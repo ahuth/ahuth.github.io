@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@ahuth/styles@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@ahuth/styles/-/styles-0.2.0.tgz#44f9db0f03ddac6f279a0497bdab0c89898bc8e3"
-  integrity sha512-oJWXrze/O93KtaFbDcoiWYOa2X532S+0vFCZIPY+9EDYd/kVTcqZzLxVZsU+WnjgofFMlSiBg1r/Sib35lKxvA==
-
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
