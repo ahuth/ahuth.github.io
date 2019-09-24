@@ -1,12 +1,10 @@
 module.exports = {
   siteMetadata: {
-    author: 'Andrew Huth',
-    description: 'Andrew Huth -- Research and Development',
-    siteUrl: 'https://ahuth.github.io',
     title: 'Andrew Huth',
+    description: 'Andrew Huth -- Research and Development',
+    author: 'Andrew Huth',
   },
   plugins: [
-    'gatsby-plugin-feed',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',
     {
