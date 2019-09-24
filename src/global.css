@@ -7,6 +7,10 @@ a {
   color: deepskyblue;
 }
 
+a:visited {
+  color: orchid;
+}
+
 body {
   background-color: #111;
   color: ghostwhite;
