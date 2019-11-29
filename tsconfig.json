@@ -10,5 +10,6 @@
       "noImplicitAny": true,
       "moduleResolution": "node",
       "strict": true
-    }
+    },
+    "include": ["scripts"]
   }
