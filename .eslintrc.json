@@ -6,6 +6,9 @@
     "@typescript-eslint/no-unused-vars": "error",
     "arrow-parens": 0,
     "func-names": 0,
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ["scripts/**/*"]}
+    ],
     "import/prefer-default-export": 0,
     "no-unused-vars": 0,
     "no-use-before-define": 0,
