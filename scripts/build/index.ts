@@ -1,6 +1,7 @@
 import fs from 'fs';
 import glob from 'glob';
 import nunjucks from 'nunjucks';
+import { execSync } from 'child_process';
 
 nunjucks.configure('src');
 
@@ -23,3 +24,5 @@ if (!fs.existsSync('build/')) {
 results.forEach(function (result) {
   fs.writeFileSync(result.outputPath, result.contents);
 });
+
+execSync('cp -R src/static/ build');
