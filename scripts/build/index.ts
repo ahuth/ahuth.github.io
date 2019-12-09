@@ -17,9 +17,7 @@ const results = pageFiles.map(function (filePath) {
   };
 });
 
-if (!fs.existsSync('build/')) {
-  fs.mkdirSync('build/');
-}
+execSync('mkdir -p build');
 
 results.forEach(function (result) {
   fs.writeFileSync(result.outputPath, result.contents);
