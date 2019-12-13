@@ -12,6 +12,16 @@ nunjucks.configure('src', { autoescape: false });
 const pageFiles = glob.sync('src/pages/**/*.html', { nodir: true });
 const markdownFiles = glob.sync('src/pages/**/*.md', { nodir: true });
 
+const parsedMarkdownFiles = markdownFiles.map(function (filePath) {
+  const outputPath = replaceExtension(filePath.replace(/^src\/pages\//, 'build/'), '.html');
+  const file = fs.readFileSync(filePath);
+  const parsedContent = matter(file);
+  return {
+    outputPath,
+    parsedContent,
+  };
+});
+
 const pageResults = pageFiles.map(function (filePath) {
   const localizedPath = filePath.replace(/^src\//, '');
   const outputPath = filePath.replace(/^src\/pages\//, 'build/');
@@ -23,15 +33,14 @@ const pageResults = pageFiles.map(function (filePath) {
   };
 });
 
-const markdownResults = markdownFiles.map(function (filePath) {
-  const outputPath = replaceExtension(filePath.replace(/^src\/pages\//, 'build/'), '.html');
-  const file = fs.readFileSync(filePath);
-  const grayMatter = matter(file);
-  const markdownContent = markdownIt().render(grayMatter.content);
+const markdownResults = parsedMarkdownFiles.map(function (parsedMarkdownFile) {
+  const { outputPath, parsedContent } = parsedMarkdownFile;
+  const markdownContent = markdownIt().render(parsedContent.content);
+
   const contents = nunjucks.render('layouts/markdown.html', {
-    date: grayMatter.data.date,
+    date: parsedContent.data.date,
     markdownContent,
-    pageTitle: grayMatter.data.pageTitle,
+    pageTitle: parsedContent.data.pageTitle,
   });
 
   return {
