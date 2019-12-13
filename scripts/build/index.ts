@@ -25,7 +25,9 @@ const parsedMarkdownFiles = markdownFiles.map(function (filePath) {
 const pageResults = pageFiles.map(function (filePath) {
   const localizedPath = filePath.replace(/^src\//, '');
   const outputPath = filePath.replace(/^src\/pages\//, 'build/');
-  const contents = nunjucks.render(localizedPath);
+  const contents = nunjucks.render(localizedPath, {
+    parsedMarkdownFiles,
+  });
 
   return {
     contents,

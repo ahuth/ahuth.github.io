@@ -3,4 +3,9 @@
 
 {% block content %}
 <h1>hello world</h1>
+<ul>
+{% for article in parsedMarkdownFiles %}
+  <li>{{ article.parsedContent.data.title }}</li>
+{% endfor %}
+</ul>
 {% endblock %}
