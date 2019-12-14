@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import nunjucks from 'nunjucks';
 import path from 'path';
 import { execSync } from 'child_process';
+import { format } from 'date-fns';
 
 nunjucks.configure('src', { autoescape: false });
 
@@ -55,10 +56,11 @@ const markdownResults = parsedMarkdownFiles.map(function (parsedMarkdownFile) {
   const { outputPath, parsedContent } = parsedMarkdownFile;
   const markdownContent = markdown.render(parsedContent.content);
 
-  const contents = nunjucks.render('layouts/markdown.html', {
-    date: parsedContent.data.date,
+  const contents = nunjucks.render('layouts/article.html', {
+    articleTitle: parsedContent.data.title,
+    date: format(parsedContent.data.date, 'yyyy-MM-dd'),
     markdownContent,
-    pageTitle: parsedContent.data.pageTitle,
+    pageTitle: parsedContent.data.title,
   });
 
   return {

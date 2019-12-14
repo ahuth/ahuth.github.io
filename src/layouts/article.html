@@ -1,0 +1,22 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<main>
+  <nav>
+    <a href="/">← Home</a>
+  </nav>
+  <article>
+    <header>
+      <h1>{{ articleTitle }}</h1>
+      <time datetime="{{ date }}">{{ date }}</time>
+    </header>
+    <div>
+      {{ markdownContent }}
+    </div>
+    <footer>
+      <hr />
+      <p>Let me know your thoughts at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+    </footer>
+  </article>
+</main>
+{% endblock %}
