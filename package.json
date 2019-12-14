@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ts-node -T ./scripts/build",
     "clean": "rm -rf ./build/*",
-    "deploy": "gh-pages -b master -d public -t",
+    "deploy": "gh-pages -b master -d build -t",
     "lint": "eslint --ext .js,.ts scripts/",
     "prebuild": "yarn run clean",
     "predeploy": "yarn run build",
