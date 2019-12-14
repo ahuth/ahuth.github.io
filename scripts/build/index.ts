@@ -6,7 +6,6 @@ import matter from 'gray-matter';
 import nunjucks from 'nunjucks';
 import path from 'path';
 import { execSync } from 'child_process';
-import replaceExtension from './replaceExtension';
 
 nunjucks.configure('src', { autoescape: false });
 
@@ -23,12 +22,19 @@ const markdown = markdownIt({
 });
 
 const parsedMarkdownFiles = markdownFiles.map(function (filePath) {
-  const outputPath = replaceExtension(filePath.replace(/^src\/pages\//, 'build/'), '.html');
+  const buildFilePath = filePath.replace(/^src\/pages\//, 'build/');
+
+  const outputPath = path.join(
+    path.dirname(buildFilePath),
+    path.basename(buildFilePath, path.extname(buildFilePath)),
+  ) + '.html';
+
   const file = fs.readFileSync(filePath);
   const parsedContent = matter(file);
   return {
     outputPath,
     parsedContent,
+    slug: outputPath.replace('build/', ''),
   };
 });
 
