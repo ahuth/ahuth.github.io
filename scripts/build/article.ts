@@ -25,7 +25,7 @@ export type Type = Article;
 export function read(filePath: string): Article {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
-  const outputPath = Paths.replaceExtension(buildPath(filePath), 'html');
+  const outputPath = Paths.replaceExtension(filePath.replace('src/', 'build/'), 'html');
 
   return {
     date: frontMatter.data.date,
@@ -34,8 +34,4 @@ export function read(filePath: string): Article {
     slug: outputPath.replace('build/', ''),
     title: frontMatter.data.title,
   };
-}
-
-function buildPath(filePath: string): string {
-  return filePath.replace(/^src\/pages\//, 'build/');
 }

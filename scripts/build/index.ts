@@ -5,7 +5,7 @@ import * as Output from './output';
 import * as Page from './page';
 
 const pageFiles = glob.sync('src/pages/**/*.html', { nodir: true });
-const articleFiles = glob.sync('src/pages/articles/**/*.md', { nodir: true });
+const articleFiles = glob.sync('src/articles/**/*.md', { nodir: true });
 
 // Create the build directory if necessary.
 execSync('mkdir -p build');
