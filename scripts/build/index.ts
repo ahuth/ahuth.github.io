@@ -11,9 +11,14 @@ nunjucks.configure('src', { autoescape: false });
 const pageFiles = glob.sync('src/pages/**/*.html', { nodir: true });
 const markdownFiles = glob.sync('src/pages/**/*.md', { nodir: true });
 
-// Read each markdown article file and determine information about it, such as its contents,
-// front matter data, and output path.
+// Create the build directory if necessary.
+execSync('mkdir -p build');
+
+// Read each markdown article file, render the markdown into a nunkicks template, and write the
+// file to the build directory.
 const articles = markdownFiles.map(Article.read);
+const articleResults = articles.map(Output.fromArticle);
+articleResults.forEach(Output.write);
 
 const pageResults = pageFiles.map(function (filePath) {
   const localizedPath = filePath.replace(/^src\//, '');
@@ -27,12 +32,6 @@ const pageResults = pageFiles.map(function (filePath) {
     outputPath,
   };
 });
-
-const articleResults = articles.map(Output.fromArticle);
-articleResults.forEach(Output.write);
-
-// Create the build directory if necessary.
-execSync('mkdir -p build');
 
 pageResults.forEach(function (result) {
   const outputDirname = path.dirname(result.outputPath);
