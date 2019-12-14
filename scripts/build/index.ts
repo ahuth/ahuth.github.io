@@ -10,7 +10,7 @@ const markdownFiles = glob.sync('src/pages/**/*.md', { nodir: true });
 // Create the build directory if necessary.
 execSync('mkdir -p build');
 
-// Read each markdown article file, render the markdown into a nunkicks template, and write the
+// Read each markdown article file, render the markdown into a nunjucks template, and write the
 // file to the build directory.
 const articles = markdownFiles.map(Article.read);
 const articleResults = articles.map(Output.fromArticle);
