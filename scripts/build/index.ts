@@ -4,22 +4,22 @@ import nunjucks from 'nunjucks';
 import path from 'path';
 import { execSync } from 'child_process';
 import { format } from 'date-fns';
-import * as Markdown from './markdown';
+import * as Article from './article';
 
 nunjucks.configure('src', { autoescape: false });
 
 const pageFiles = glob.sync('src/pages/**/*.html', { nodir: true });
 const markdownFiles = glob.sync('src/pages/**/*.md', { nodir: true });
 
-// Read each markdown file and determine information about it, such as its contents,
+// Read each markdown article file and determine information about it, such as its contents,
 // front matter data, and output path.
-const parsedMarkdownFiles = markdownFiles.map(Markdown.read);
+const articles = markdownFiles.map(Article.read);
 
 const pageResults = pageFiles.map(function (filePath) {
   const localizedPath = filePath.replace(/^src\//, '');
   const outputPath = filePath.replace(/^src\/pages\//, 'build/');
   const contents = nunjucks.render(localizedPath, {
-    parsedMarkdownFiles,
+    articles: articles,
   });
 
   return {
@@ -28,24 +28,24 @@ const pageResults = pageFiles.map(function (filePath) {
   };
 });
 
-const markdownResults = parsedMarkdownFiles.map(function (markdownFile) {
+const articleResults = articles.map(function (articleFile) {
   const contents = nunjucks.render('layouts/article.html', {
-    articleTitle: markdownFile.frontMatter.title,
-    date: format(markdownFile.frontMatter.date, 'yyyy-MM-dd'),
-    markdownContent: markdownFile.rendered,
-    pageTitle: markdownFile.frontMatter.title,
+    articleTitle: articleFile.title,
+    date: format(articleFile.date, 'yyyy-MM-dd'),
+    markdownContent: articleFile.rendered,
+    pageTitle: articleFile.title,
   });
 
   return {
     contents,
-    outputPath: markdownFile.outputPath,
+    outputPath: articleFile.outputPath,
   };
 });
 
 // Create the build directory if necessary.
 execSync('mkdir -p build');
 
-pageResults.concat(markdownResults).forEach(function (result) {
+pageResults.concat(articleResults).forEach(function (result) {
   const outputDirname = path.dirname(result.outputPath);
   fs.mkdirSync(outputDirname, { recursive: true });
   fs.writeFileSync(result.outputPath, result.contents);

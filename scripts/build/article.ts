@@ -12,24 +12,24 @@ const renderer = markdownIt({
   },
 });
 
-type MarkdownFile = {
-  date: string,
-  frontMatter: { [key: string]: any },
+type ArticleFile = {
+  date: Date,
   outputPath: string,
   rendered: string,
   slug: string,
+  title: string,
 };
 
-export function read(filePath: string): MarkdownFile {
+export function read(filePath: string): ArticleFile {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
   const outputPath = Paths.replaceExtension(Paths.buildPath(filePath), 'html');
 
   return {
     date: frontMatter.data.date,
-    frontMatter: frontMatter.data,
     outputPath,
     rendered: rendererMarkdown,
     slug: outputPath.replace('build/', ''),
+    title: frontMatter.data.title,
   };
 }
