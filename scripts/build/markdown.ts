@@ -13,6 +13,7 @@ const renderer = markdownIt({
 });
 
 type MarkdownFile = {
+  date: string,
   frontMatter: { [key: string]: any },
   outputPath: string,
   rendered: string,
@@ -25,6 +26,7 @@ export function read(filePath: string): MarkdownFile {
   const outputPath = Paths.replaceExtension(Paths.buildPath(filePath), 'html');
 
   return {
+    date: frontMatter.data.date,
     frontMatter: frontMatter.data,
     outputPath,
     rendered: rendererMarkdown,

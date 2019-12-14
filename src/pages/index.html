@@ -32,7 +32,7 @@
     <section>
       <h2>Articles</h2>
       <ol>
-        {% for article in parsedMarkdownFiles %}
+        {% for article in parsedMarkdownFiles | sort(attribute='date') %}
         <li><a href="{{ article.slug }}">{{ article.frontMatter.title }}</a></li>
         {% endfor %}
       </ol>
