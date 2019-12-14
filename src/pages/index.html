@@ -2,10 +2,27 @@
 {% set pageTitle = "Andrew Huth" %}
 
 {% block content %}
-<h1>hello world</h1>
-<ol>
-{% for article in parsedMarkdownFiles %}
-  <li><a href="{{ article.slug }}">{{ article.parsedContent.data.title }}</a></li>
-{% endfor %}
-</ol>
+<div>
+  <header>
+    <h1>Andrew Huth</h1>
+    <div>
+      <div>
+        <span>Working at <a href="https://www.airbnb.com/">Airbnb</a> on <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">accessibility</a>.</span>
+      </div>
+      <a href="https://github.com/ahuth">github.com/ahuth</a>
+      <br />
+      <a href="mailto:andrew@huth.me">andrew@huth.me</a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Articles</h2>
+      <ol>
+        {% for article in parsedMarkdownFiles %}
+        <li><a href="{{ article.slug }}">{{ article.parsedContent.data.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </section>
+  </main>
+</div>
 {% endblock %}
