@@ -3,12 +3,13 @@ import nunjucks from 'nunjucks';
 import path from 'path';
 import { format } from 'date-fns';
 import { Type as Article } from './article';
+import { Type as Page } from './page';
 
 nunjucks.configure('src', { autoescape: false });
 
 type Output = {
-  content: string;
-  path: string;
+  content: string,
+  path: string,
 };
 
 export function fromArticle(article: Article): Output {
@@ -22,6 +23,17 @@ export function fromArticle(article: Article): Output {
   return {
     content,
     path: article.outputPath,
+  };
+}
+
+export function fromPage(page: Page, articles: Article[]): Output {
+  const content = nunjucks.render(page.localizedPath, {
+    articles,
+  });
+
+  return {
+    content,
+    path: page.outputPath,
   };
 }
 
