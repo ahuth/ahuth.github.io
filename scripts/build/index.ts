@@ -1,6 +1,5 @@
 import fs from 'fs';
 import glob from 'glob';
-import matter from 'gray-matter';
 import nunjucks from 'nunjucks';
 import path from 'path';
 import { execSync } from 'child_process';
@@ -12,22 +11,9 @@ nunjucks.configure('src', { autoescape: false });
 const pageFiles = glob.sync('src/pages/**/*.html', { nodir: true });
 const markdownFiles = glob.sync('src/pages/**/*.md', { nodir: true });
 
-const parsedMarkdownFiles = markdownFiles.map(function (filePath) {
-  const buildFilePath = filePath.replace(/^src\/pages\//, 'build/');
-
-  const outputPath = path.join(
-    path.dirname(buildFilePath),
-    path.basename(buildFilePath, path.extname(buildFilePath)),
-  ) + '.html';
-
-  const file = fs.readFileSync(filePath);
-  const parsedContent = matter(file);
-  return {
-    outputPath,
-    parsedContent,
-    slug: outputPath.replace('build/', ''),
-  };
-});
+// Read each markdown file and determine information about it, such as its contents,
+// front matter data, and output path.
+const parsedMarkdownFiles = markdownFiles.map(Markdown.read);
 
 const pageResults = pageFiles.map(function (filePath) {
   const localizedPath = filePath.replace(/^src\//, '');
@@ -42,23 +28,21 @@ const pageResults = pageFiles.map(function (filePath) {
   };
 });
 
-const markdownResults = parsedMarkdownFiles.map(function (parsedMarkdownFile) {
-  const { outputPath, parsedContent } = parsedMarkdownFile;
-  const markdownContent = Markdown.render(parsedContent.content);
-
+const markdownResults = parsedMarkdownFiles.map(function (markdownFile) {
   const contents = nunjucks.render('layouts/article.html', {
-    articleTitle: parsedContent.data.title,
-    date: format(parsedContent.data.date, 'yyyy-MM-dd'),
-    markdownContent,
-    pageTitle: parsedContent.data.title,
+    articleTitle: markdownFile.frontMatter.title,
+    date: format(markdownFile.frontMatter.date, 'yyyy-MM-dd'),
+    markdownContent: markdownFile.rendered,
+    pageTitle: markdownFile.frontMatter.title,
   });
 
   return {
     contents,
-    outputPath,
+    outputPath: markdownFile.outputPath,
   };
 });
 
+// Create the build directory if necessary.
 execSync('mkdir -p build');
 
 pageResults.concat(markdownResults).forEach(function (result) {
@@ -67,4 +51,5 @@ pageResults.concat(markdownResults).forEach(function (result) {
   fs.writeFileSync(result.outputPath, result.contents);
 });
 
+// Move every "static" file into the build directory.
 execSync('cp -R src/static/ build');

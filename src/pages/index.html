@@ -33,7 +33,7 @@
       <h2>Articles</h2>
       <ol>
         {% for article in parsedMarkdownFiles %}
-        <li><a href="{{ article.slug }}">{{ article.parsedContent.data.title }}</a></li>
+        <li><a href="{{ article.slug }}">{{ article.frontMatter.title }}</a></li>
         {% endfor %}
       </ol>
     </section>
