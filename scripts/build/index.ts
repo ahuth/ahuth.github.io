@@ -3,8 +3,8 @@ import glob from 'glob';
 import nunjucks from 'nunjucks';
 import path from 'path';
 import { execSync } from 'child_process';
-import { format } from 'date-fns';
 import * as Article from './article';
+import * as Output from './output';
 
 nunjucks.configure('src', { autoescape: false });
 
@@ -28,24 +28,13 @@ const pageResults = pageFiles.map(function (filePath) {
   };
 });
 
-const articleResults = articles.map(function (articleFile) {
-  const contents = nunjucks.render('layouts/article.html', {
-    articleTitle: articleFile.title,
-    date: format(articleFile.date, 'yyyy-MM-dd'),
-    markdownContent: articleFile.rendered,
-    pageTitle: articleFile.title,
-  });
-
-  return {
-    contents,
-    outputPath: articleFile.outputPath,
-  };
-});
+const articleResults = articles.map(Output.fromArticle);
+articleResults.forEach(Output.write);
 
 // Create the build directory if necessary.
 execSync('mkdir -p build');
 
-pageResults.concat(articleResults).forEach(function (result) {
+pageResults.forEach(function (result) {
   const outputDirname = path.dirname(result.outputPath);
   fs.mkdirSync(outputDirname, { recursive: true });
   fs.writeFileSync(result.outputPath, result.contents);

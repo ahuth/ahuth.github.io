@@ -12,7 +12,7 @@ const renderer = markdownIt({
   },
 });
 
-type ArticleFile = {
+type Article = {
   date: Date,
   outputPath: string,
   rendered: string,
@@ -20,7 +20,9 @@ type ArticleFile = {
   title: string,
 };
 
-export function read(filePath: string): ArticleFile {
+export type Type = Article;
+
+export function read(filePath: string): Article {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
   const outputPath = Paths.replaceExtension(Paths.buildPath(filePath), 'html');
