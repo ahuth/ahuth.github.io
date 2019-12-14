@@ -31,8 +31,8 @@
     </section>
     <section class="fl w-100 w-50-ns">
       <h2>Articles</h2>
-      <ol>
-        {% for article in articles | sort(attribute='date') %}
+      <ol reversed>
+        {% for article in articles | sort(attribute='date') | reverse %}
         <li><a href="{{ article.slug }}">{{ article.title }}</a></li>
         {% endfor %}
       </ol>
