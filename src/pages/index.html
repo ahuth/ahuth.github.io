@@ -1,0 +1,42 @@
+{% extends "layouts/application.html" %}
+{% set pageTitle = "Andrew Huth" %}
+
+{% block content %}
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h1>Andrew Huth</h1>
+    <div>
+      <div>
+        <span>Working at <a href="https://www.airbnb.com/">Airbnb</a> on <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">accessibility</a>.</span>
+      </div>
+      <a href="https://github.com/ahuth">github.com/ahuth</a>
+      <br />
+      <a href="mailto:andrew@huth.me">andrew@huth.me</a>
+    </div>
+  </header>
+  <main>
+    <section class="fl w-100 w-50-ns">
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="https://github.com/ahuth/cog">Cog</a> <a href="https://ahuth.github.io/cog">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/conway">Conway</a> <a href="https://ahuth.github.io/conway">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/evolved-salesman">Evolved Salesman</a> <a href="https://ahuth.github.io/evolved-salesman">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/orbital">Orbital</a> <a href="https://ahuth.github.io/orbital">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/raycast">Raycast</a> <a href="https://ahuth.github.io/raycast">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/raytrace">Raytrace</a> <a href="https://ahuth.github.io/raytrace">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/standfast">Standfast</a></li>
+        <li><a href="https://github.com/ahuth/tetris">Tetris</a> <a href="https://ahuth.github.io/tetris">(Demo)</a></li>
+        <li><a href="https://github.com/ahuth/waves">Waves</a> <a href="https://ahuth.github.io/waves">(Demo)</a></li>
+      </ul>
+    </section>
+    <section class="fl w-100 w-50-ns">
+      <h2>Articles</h2>
+      <ol reversed>
+        {% for article in articles | sort(attribute='date') | reverse %}
+        <li><a href="{{ article.slug }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </section>
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+  {
+    "compilerOptions": {
+      "target": "es6",
+      "lib": ["esnext"],
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "commonjs",
+      "noEmit": true,
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "strict": true
+    },
+    "include": ["scripts"]
+  }

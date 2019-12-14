@@ -10,7 +10,7 @@
 /build
 .next
 
-# gatsby files
+# compiled files
 .cache/
 public
 
