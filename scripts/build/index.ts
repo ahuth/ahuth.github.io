@@ -13,13 +13,13 @@ execSync('mkdir -p build');
 // Read each markdown article file, render the markdown into a nunjucks template, and write the
 // file to the build directory.
 const articles = articleFiles.map(Article.read);
-const articleResults = articles.map(Output.fromArticle);
-articleResults.forEach(Output.write);
+const articleOutput = articles.map(Output.fromArticle);
+articleOutput.forEach(Output.write);
 
 // Read each html page and write to the build directory.
 const pages = pageFiles.map(Page.read);
-const pageResults = pages.map(page => Output.fromPage(page, articles));
-pageResults.forEach(Output.write);
+const pageOutput = pages.map(page => Output.fromPage(page, articles));
+pageOutput.forEach(Output.write);
 
 // Move every "static" file into the build directory.
 execSync('cp -R src/static/ build');
