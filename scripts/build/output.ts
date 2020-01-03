@@ -27,7 +27,7 @@ export function fromArticle(article: Article): Output {
 }
 
 export function fromPage(page: Page, articles: Article[]): Output {
-  const content = nunjucks.render(page.localizedPath, {
+  const content = nunjucks.render(page.localPath, {
     articles,
   });
 
