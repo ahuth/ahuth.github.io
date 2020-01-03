@@ -1,15 +1,16 @@
 type Page = {
   localizedPath: string,
-  outputPath: string,
+  subPath: string,
 }
 
 export type Type = Page;
 
 export function read(filePath: string): Page {
   const localizedPath = filePath.replace(/^src\//, '');
-  const outputPath = filePath.replace(/^src\/pages\//, 'build/');
+  const subPath = filePath.replace(/^src\/pages\//, '');
+
   return {
     localizedPath,
-    outputPath,
+    subPath,
   };
 }

@@ -14,9 +14,8 @@ const renderer = markdownIt({
 
 type Article = {
   date: Date,
-  outputPath: string,
   rendered: string,
-  slug: string,
+  subPath: string,
   title: string,
 };
 
@@ -25,13 +24,12 @@ export type Type = Article;
 export function read(filePath: string): Article {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
-  const outputPath = Paths.replaceExtension(filePath.replace('src/', 'build/'), 'html');
+  const subPath = Paths.replaceExtension(filePath.replace('src/', ''), 'html');
 
   return {
     date: frontMatter.data.date,
-    outputPath,
     rendered: rendererMarkdown,
-    slug: outputPath.replace('build/', ''),
+    subPath,
     title: frontMatter.data.title,
   };
 }

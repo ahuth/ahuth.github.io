@@ -22,7 +22,7 @@ export function fromArticle(article: Article): Output {
 
   return {
     content,
-    path: article.outputPath,
+    path: path.join('build', article.subPath),
   };
 }
 
@@ -33,7 +33,7 @@ export function fromPage(page: Page, articles: Article[]): Output {
 
   return {
     content,
-    path: page.outputPath,
+    path: path.join('build', page.subPath),
   };
 }
 
