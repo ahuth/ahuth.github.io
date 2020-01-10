@@ -10,7 +10,7 @@ class MyComponent extends React.Component {
   canvasRef = React.createRef();
 
   componentDidMount() {
-    const context = this.canvasRef.getContext('2d');
+    const canvas = this.canvasRef.current;
     // Do things with the canvas element...
   }
 
@@ -20,7 +20,9 @@ class MyComponent extends React.Component {
 }
 ```
 
-There weren't really any other use cases. However, hooks require us to explicitly consider what values are changing, and how this affects setup and teardown.
+There weren't really any other use cases. We'll come back to why this changes with hooks.
+
+When using hooks, we have to explicitly consider what values are changing, and how this affects setup and teardown.
 
 For example, this logs a message to the console every so often.
 
