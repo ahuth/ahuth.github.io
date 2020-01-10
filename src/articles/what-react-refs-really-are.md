@@ -1,6 +1,6 @@
 ---
 title: What React Refs Really Are
-date: 2019-12-28
+date: 2020-01-10
 ---
 
 Before [hooks](https://reactjs.org/docs/hooks-overview.html), React refs were used to capture references to DOM nodes, so that we can interact with their APIs.
