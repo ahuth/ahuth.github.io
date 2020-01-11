@@ -1,6 +1,6 @@
 ---
 title: What React Refs Really Are
-date: 2020-01-10
+date: 2020-01-11
 ---
 
 Before [hooks](https://reactjs.org/docs/hooks-overview.html), React refs were used to capture references to DOM nodes, so that we can interact with their APIs.
@@ -20,9 +20,9 @@ class MyComponent extends React.Component {
 }
 ```
 
-There weren't really any other use cases. We'll come back to why this changes with hooks.
+There weren't really any other use cases. But that changed with hooks.
 
-When using hooks, we have to explicitly consider what values are changing, and how this affects setup and teardown.
+When using hooks, there are many times we have to explicitly consider what values are changing, and how this affects setup and teardown.
 
 For example, this logs a message to the console every so often.
 
@@ -43,15 +43,15 @@ function MyComponent({ message, interval }) {
 }
 ```
 
-Any time the message or interval changes, the `setInterval` is cleared and a new one is setup. Often this is exactly what we want. But in this case we don't necessarily need to tear down and re-setup anytime the `message` changes. And for more complex or realistic examples, it would be much better to avoid this. We want an immutable reference to a mutable value.
+Any time the message or interval changes, the `setInterval` is cleared and a new one is setup. Often this is exactly what we want. But in this case we don't necessarily need to tear down and re-setup anytime the `message` changes. And for more complex  examples, it may be much better to avoid this. We want an immutable reference to a mutable value.
 
-Which is exactly what refs are.
+And this is exactly what refs now help us with.
 
 ```jsx
 function MyComponent({ message, interval }) {
   const messageRef = useRef(message);
 
-  // Keep the ref updated with the latest `message`.
+  // Keep a ref updated with the latest `message`.
   React.useEffect(
     () => {
       messageRef.current = message;
@@ -78,4 +78,4 @@ function MyComponent({ message, interval }) {
 
 For this example, the `messageRef` object will never change, and will not cause the second `useEffect` call to clear the interval and set a new one up.
 
-And this is what React refs "really" are: immutable references to mutable values, needed to control when other hooks re-compute themselves.
+This is what React refs "really" are: immutable references to mutable values, which are helpful to control when other hooks re-compute themselves.
