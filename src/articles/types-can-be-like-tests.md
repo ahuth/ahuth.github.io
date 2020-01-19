@@ -9,7 +9,7 @@ One way of thinking about tests is that well-written ones check that the behavio
 
 Another way of thinking about them, though, is that they influence how we write our code. We write the minimum amount needed to make the tests pass, and then refactor. From this standpoint, types can be used in a similar way.
 
-Frequently I find myself writing code and not knowing the best way to proceed. Consider a [cellular automata implementation](https://github.com/ahuth/automata) function to compute the next iteration given a set of rules.
+Frequently I find myself writing code and not knowing the best way to proceed. Consider a function in a [cellular automata implementation](https://github.com/ahuth/automata) to compute a next iteration given a set of rules.
 
 ```ts
 function next(row: Row, rules: Rule[]): Row {
