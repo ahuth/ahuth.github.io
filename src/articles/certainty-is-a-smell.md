@@ -9,4 +9,4 @@ Anecdotally, people tend to believe ideas in software engineering that are said 
 
 Either way, I've started to view absolute certainty as a smell. When someone talks about their solution as the "right" one, or the "best" one, or the "only" one, it's time to start questioning and dig deeper. This doesn't mean that they're wrong. It also doesn't mean that we shouldn't all act with confidence, especially when we've put in the work to research and develop a good solution to a problem.
 
-But look out for certainty in ourselves and others, and demand more evidence.
+But look out for certainty in ourselves and others, and demand more evidence and do our own analysis.
