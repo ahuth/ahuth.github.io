@@ -1,6 +1,6 @@
 ---
 title: Types Can Be Like Tests
-date: 2020-01-19
+date: 2020-01-25
 ---
 
 This is sure to upset some people, but here goes: writing types can fulfill the same role as writing tests. Particularly tests in test-driven development. Let me explain.
