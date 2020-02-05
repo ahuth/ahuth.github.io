@@ -39,18 +39,16 @@ function getSecond(pair) {
 There is another way. We can use closures to create a data structure out of nothing but functions.
 
 ```js
-// Slightly simplified from the implementation in the book.
-
 function cons(a, b) {
-  return pick => pick ? a : b;
+  return fn => fn(a, b);
 }
 
 function getFirst(pair) {
-  return pair(true);
+  return pair(a => a);
 }
 
 function getSecond(pair) {
-  return pair(false);
+  return pair((a, b) => b);
 }
 ```
 
@@ -59,3 +57,7 @@ Harold Abelson mentions in the [amazing corresponding lectures](https://www.yout
 Looking back on it, the example doesn't feel that mind-blowing anymore. But there's so much wisdom in the book. You just have to work for it.
 
 See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
+
+- - -
+
+Thank you lobste.rs user [sjl](https://lobste.rs/u/sjl) for pointing out [how to make the second implementation better](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_0lwlon)!
