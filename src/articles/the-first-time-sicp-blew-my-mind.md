@@ -44,7 +44,7 @@ function cons(a, b) {
 }
 
 function getFirst(pair) {
-  return pair(a => a);
+  return pair((a, b) => a);
 }
 
 function getSecond(pair) {
