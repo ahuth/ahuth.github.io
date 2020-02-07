@@ -60,4 +60,6 @@ See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
 
 - - -
 
-Thank you lobste.rs user [sjl](https://lobste.rs/u/sjl) for pointing out [how to make the second implementation better](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_0lwlon)!
+Edits:
+- 2020-02-04 - Updated the second implementation to [sjl's recommendation](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_0lwlon).
+- 2020-02-04 - Simplified the second example again, based on [brandonbloom's recommendation](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_isgq1v).
