@@ -20,7 +20,15 @@ getFirst(cell); // => 1
 getSecond(cell); // => 2
 ```
 
-How is a cons cell constructed? One obvious way would be to use an array.
+From here we can create layers of abstractions. Imagine using `cons` to combine two numbers into a point. Two points can be combined to create a line.
+
+We can even use `cons` to create linked lists of points, lines, or anything else we want.
+
+```js
+const rectangle = cons(line1, cons(line2, cons(line3, cons(line4, null))));
+```
+
+After building up several such abstractions, an interesting point is brought up. How is a cons cell itself constructed? One obvious way would be to use an array.
 
 ```js
 function cons(a, b) {
@@ -52,9 +60,11 @@ function getSecond(pair) {
 }
 ```
 
-Harold Abelson mentions in the [amazing corresponding lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. His point (I think) was about the nature of abstractions. But I wasn't terrified - I was ecstatic, and fell in love with the book. It felt like some deeper secret of the universe had been revealed to me.
+Harold Abelson mentions in the [corresponding lectures](https://www.youtube.com/watch?v=ymsbTVLbyN4&list=PLE18841CABEA24090&index=24) that this idea might be terrifying. I see his point.
 
-Looking back on it, the example doesn't feel that mind-blowing anymore. But there's so much wisdom in the book. You just have to work for it.
+Our layers of abstraction don't require anything as concrete or stable as an array or other data structure. All we need are functions.
+
+However, when I first encountered this, I wasn't terrified. I was ecstatic. Our whole tower of abstraction is built on foundations that are hidden from us. And when done correctly, we can even change our implemenetation without affecting other layers.
 
 See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
 
@@ -63,3 +73,4 @@ See my [SICP exercise solutions on Github](https://github.com/ahuth/sicp).
 Edits:
 - 2020-02-04 - Updated the second implementation to [sjl's recommendation](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_0lwlon).
 - 2020-02-04 - Simplified the second example again, based on [brandonbloom's recommendation](https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_isgq1v).
+- 2020-02-05 - Added more detail about why this was mind blowing for me.
