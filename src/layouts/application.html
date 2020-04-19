@@ -11,12 +11,17 @@
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.17.1/styles/atom-one-dark.css" />
   <style>
     a { color: deepskyblue; }
-    body { font-size: 1.125rem; }
+    body {
+      background-color: black;
+      color: whitesmoke;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      font-size: 1.125rem;
+    }
     pre { font-size: 1rem }
   </style>
 </head>
 
-<body class="sans-serif lh-copy bg-black near-white">
+<body class="lh-copy">
   {% block content %}{% endblock %}
   {% include "layouts/analytics.html" %}
 </body>
