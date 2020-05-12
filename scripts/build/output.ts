@@ -12,8 +12,9 @@ type Output = {
   path: string,
 };
 
-export function fromArticle(article: Article): Output {
+export function fromArticle(article: Article, analyticsId: string): Output {
   const content = nunjucks.render('layouts/article.html', {
+    analyticsId,
     articleTitle: article.title,
     date: format(article.date, 'yyyy-MM-dd'),
     markdownContent: article.rendered,
@@ -26,8 +27,9 @@ export function fromArticle(article: Article): Output {
   };
 }
 
-export function fromPage(page: Page, articles: Article[]): Output {
+export function fromPage(page: Page, articles: Article[], analyticsId: string): Output {
   const content = nunjucks.render(page.localPath, {
+    analyticsId,
     articles,
   });
 
