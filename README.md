@@ -8,4 +8,4 @@ Note that the branches here are a little unusual. The built files for a Github p
 
 ## Secrets
 
-For the build step to work properly, there needs to be a `secrets.json` file at the root of the project. It should be a json file, with an `analyticsId` key. Currently, this expects the value to be a site ID for [Fathom Analytics](https://usefathom.com/).
+If there is a `secrets.json` file at the root of the project containing json with an `analyticsId` key, a script for [Fathom Analytics](https://usefathom.com/) will be included on each HTML page.

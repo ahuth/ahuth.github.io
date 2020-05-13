@@ -6,12 +6,6 @@ import * as Page from './page';
 import * as Secrets from './secrets';
 
 const { analyticsId } = Secrets.read('./secrets.json');
-
-// Abort early if no analytics site ID is present.
-if (!analyticsId) {
-  throw new Error('There must be a secrets.json file at the root of this project with an "analyticsId" key');
-}
-
 const pageFilePaths = glob.sync('src/pages/**/*.html', { nodir: true });
 const articleFilePaths = glob.sync('src/articles/**/*.md', { nodir: true });
 

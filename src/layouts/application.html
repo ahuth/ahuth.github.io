@@ -23,7 +23,9 @@
 
 <body class="lh-copy">
   {% block content %}{% endblock %}
-  {% include "layouts/analytics.html" %}
+  {% if analyticsId %}
+    {% include "layouts/analytics.html" %}
+  {% endif %}
 </body>
 
 </html>
