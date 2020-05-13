@@ -1,5 +1,5 @@
 ---
-title: Hello, Babies
+title: Hello
 date: 2019-06-27
 ---
 
