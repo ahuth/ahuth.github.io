@@ -184,7 +184,13 @@ const second = fullAdder(numberA[1], numberB[1], first.carry);
 const third = fullAdder(numberA[2], numberB[2], second.carry);
 const fourth = fullAdder(numberA[3], numberB[3], third.carry);
 
-const result = [first.sum, second.sum, third.sum, fourth.sum, fourth.carry];
+const result = [
+  first.sum,
+  second.sum,
+  third.sum,
+  fourth.sum,
+  fourth.carry,
+];
 // [1, 1, 0, 0, 1]  => 19
 ```
 
