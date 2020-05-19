@@ -1,6 +1,6 @@
 ---
 title: What is the React Scheduler?
-date: 2020-03-31
+date: 2020-03-31T00:00-08:00
 ---
 
 (Everything discussed here is for [React version 16.13.0](https://github.com/facebook/react/releases/tag/v16.13.0))

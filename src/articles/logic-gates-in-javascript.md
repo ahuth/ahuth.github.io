@@ -1,6 +1,6 @@
 ---
 title: Logic Gates in JavaScript
-date: 2020-05-18
+date: 2020-05-18T00:00-08:00
 ---
 
 [Code, by Charles Petzold](http://www.charlespetzold.com/code/), is a fascinating look at building computers from the ground up. Starting in Chapter 11, it walks through creating logic gates. These can be used (amongst other things) to add numbers together.

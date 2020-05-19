@@ -1,7 +1,7 @@
 import fs from 'fs';
 import nunjucks from 'nunjucks';
 import path from 'path';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { Type as Article } from './article';
 import { Type as Page } from './page';
 
@@ -16,7 +16,7 @@ export function fromArticle(article: Article, analyticsId?: string): Output {
   const content = nunjucks.render('layouts/article.html', {
     analyticsId,
     articleTitle: article.title,
-    date: format(article.date, 'yyyy-MM-dd'),
+    date: format(parseISO(article.date), 'yyyy-MM-dd'),
     markdownContent: article.rendered,
     pageTitle: article.title,
   });

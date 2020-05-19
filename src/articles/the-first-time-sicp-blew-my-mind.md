@@ -1,6 +1,6 @@
 ---
 title: The First Time SICP Blew My Mind
-date: 2019-08-23
+date: 2019-08-23T00:00-08:00
 ---
 
 [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/index.html) is an introduction to computer science textbook used by MIT during the 80's and 90's. It uses [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29) to teach the principles of computer programming, plus a lot of recursion, abstraction, and (my favorite) programming by wishful thinking.

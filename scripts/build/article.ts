@@ -13,7 +13,7 @@ const renderer = markdownIt({
 });
 
 type Article = {
-  date: Date,
+  date: string,
   rendered: string,
   subPath: string,
   title: string,

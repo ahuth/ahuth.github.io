@@ -1,6 +1,6 @@
 ---
 title: Hello
-date: 2019-06-27
+date: 2019-06-27T00:00-08:00
 ---
 
 From [God Bless You, Mr. Rosewater](https://en.wikipedia.org/wiki/God_Bless_You,_Mr._Rosewater), by Kurt Vonnegut:

@@ -1,6 +1,6 @@
 ---
 title: Certainty is a Smell
-date: 2020-01-19
+date: 2020-01-19T00:00-08:00
 ---
 
 [Code smells](https://en.wikipedia.org/wiki/Code_smell) in software are patterns that aren't necessarily problematic, but warrant further investigation to see if there are any issues. For example, a function that takes 10 parameters may be totally reasonable, but could also point to poorly organized code. Recently I've been thinking about applying the same concept to more general topics.
