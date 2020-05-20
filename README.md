@@ -8,4 +8,6 @@ Note that the branches here are a little unusual. The built files for a Github p
 
 ## Secrets
 
-If there is a `secrets.json` file at the root of the project containing json with an `analyticsId` key, a script for [Fathom Analytics](https://usefathom.com/) will be included on each HTML page.
+Optionally, you can add a `secrets.json` file at the root of the project (which will be git-ignored), which can have the following keys:
+
+- `analyticsId` - if present, a script for [Fathom Analytics](https://usefathom.com/) will be included on each HTML page.

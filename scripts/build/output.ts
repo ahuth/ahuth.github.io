@@ -4,6 +4,7 @@ import path from 'path';
 import { format, parseISO } from 'date-fns';
 import { Type as Article } from './article';
 import { Type as Page } from './page';
+import { Type as Secrets } from './secrets';
 
 nunjucks.configure('src', { autoescape: false });
 
@@ -12,9 +13,9 @@ type Output = {
   path: string,
 };
 
-export function fromArticle(article: Article, analyticsId?: string): Output {
+export function fromArticle(article: Article, secrets?: Secrets): Output {
   const content = nunjucks.render('layouts/article.html', {
-    analyticsId,
+    analyticsId: secrets?.analyticsId,
     articleTitle: article.title,
     date: format(parseISO(article.date), 'yyyy-MM-dd'),
     markdownContent: article.rendered,
@@ -27,9 +28,9 @@ export function fromArticle(article: Article, analyticsId?: string): Output {
   };
 }
 
-export function fromPage(page: Page, articles: Article[], analyticsId?: string): Output {
+export function fromPage(page: Page, articles: Article[], secrets?: Secrets): Output {
   const content = nunjucks.render(page.localPath, {
-    analyticsId,
+    analyticsId: secrets?.analyticsId,
     articles,
   });
 

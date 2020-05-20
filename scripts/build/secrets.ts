@@ -4,6 +4,8 @@ type Secrets = {
   analyticsId?: string;
 }
 
+export type Type = Secrets;
+
 export function read(secretsPath: string): Secrets {
   if (!fs.existsSync(secretsPath)) {
     return {};
