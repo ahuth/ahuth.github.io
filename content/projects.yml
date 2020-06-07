@@ -13,7 +13,7 @@ projects:
   - name: Cog
     href: https://github.com/ahuth/cog
     demo: https://ahuth.github.io/cog
-    blurb: Dynamic generation of SVGs, based off of <a href="http://jxnblk.com/react-icons/">React Icons</a> by Brent Jackson.
+    blurb: SVG generation, based on <a href="http://jxnblk.com/react-icons/">React Icons</a> by Brent Jackson.
 
   - name: Conway
     href: https://github.com/ahuth/conway
@@ -23,7 +23,7 @@ projects:
   - name: Conway 2
     href: https://github.com/ahuth/conway2
     demo: https://ahuth.github.io/conway2
-    blurb: Conway's game of life implementation that's much more performant than my previous one.
+    blurb: Much more performant game of life than my previous one.
 
   - name: Evolved Salesman
     href: https://github.com/ahuth/evolved-salesman
@@ -38,7 +38,7 @@ projects:
   - name: Raycast
     href: https://github.com/ahuth/raycast
     demo: https://ahuth.github.io/raycast
-    blurb: Implementation of a primitive 3d graphics technique called raycasting. In React.
+    blurb: React implementation of raycasting.
 
   - name: Raytrace
     href: https://github.com/ahuth/raytrace
