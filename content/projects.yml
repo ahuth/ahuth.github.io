@@ -13,7 +13,7 @@ projects:
   - name: Cog
     href: https://github.com/ahuth/cog
     demo: https://ahuth.github.io/cog
-    blurb: SVG generation, based on <a href="http://jxnblk.com/react-icons/">React Icons</a>, by Brent Jackson.
+    blurb: SVG generation, based on <a href="http://jxnblk.com/react-icons/">React Icons</a>.
 
   - name: Conway
     href: https://github.com/ahuth/conway
@@ -33,7 +33,7 @@ projects:
   - name: Orbital
     href: https://github.com/ahuth/orbital
     demo: https://ahuth.github.io/orbital
-    blurb: Simple simulation of bodies orbiting eachother.
+    blurb: Simple simulation of orbiting bodies.
 
   - name: Raycast
     href: https://github.com/ahuth/raycast
@@ -43,11 +43,11 @@ projects:
   - name: Raytrace
     href: https://github.com/ahuth/raytrace
     demo: https://ahuth.github.io/raytrace
-    blurb: Simple raytracer following <a href="https://tmcw.github.io/literate-raytracer/">Literate Raytracer</a>, by Tom MacWright.
+    blurb: Simple raytracer following <a href="https://tmcw.github.io/literate-raytracer/">Literate Raytracer</a>.
 
   - name: Raytrace 2
     href: https://github.com/ahuth/raytrace2
-    blurb: Raytracer based on <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Raytracing in One Weekend</a>, by Peter Shirley.
+    blurb: Raytracer based on <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Raytracing in One Weekend</a>.
 
   - name: Tetris
     href: https://github.com/ahuth/tetris
