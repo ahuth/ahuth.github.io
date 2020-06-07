@@ -4,6 +4,7 @@ import path from 'path';
 import { format, parseISO } from 'date-fns';
 import { Type as Article } from './article';
 import { Type as Page } from './page';
+import { Type as Projects } from './projects';
 import { Type as Secrets } from './secrets';
 
 nunjucks.configure('src', { autoescape: false });
@@ -28,10 +29,16 @@ export function fromArticle(article: Article, secrets?: Secrets): Output {
   };
 }
 
-export function fromPage(page: Page, articles: Article[], secrets?: Secrets): Output {
+export function fromPage(
+  page: Page,
+  articles: Article[],
+  projects: Projects,
+  secrets?: Secrets,
+): Output {
   const content = nunjucks.render(page.localPath, {
     analyticsId: secrets?.analyticsId,
     articles,
+    projects,
   });
 
   return {

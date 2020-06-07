@@ -1,0 +1,56 @@
+---
+projects:
+  - name: Automata
+    href: https://github.com/ahuth/automata
+    demo: https://ahuth.github.io/automata
+    blurb: One-dimensional cellular automata.
+
+  - name: Bit Adder
+    href: https://github.com/ahuth/bit-adder
+    demo: https://ahuth.github.io/bit-adder
+    blurb: Simulation of a logic circuit implementing a binary adder.
+
+  - name: Cog
+    href: https://github.com/ahuth/cog
+    demo: https://ahuth.github.io/cog
+    blurb: Dynamic generation of SVGs, based off of [React Icons](http://jxnblk.com/react-icons/) by Brent Jackson.
+
+  - name: Conway
+    href: https://github.com/ahuth/conway
+    demo: https://ahuth.github.io/conway
+    blurb: Conway's game of life in React.
+
+  - name: Conway 2
+    href: https://github.com/ahuth/conway2
+    demo: https://ahuth.github.io/conway2
+    blurb: Conway's game of life implementation that's much more performant than my previous one.
+
+  - name: Evolved Salesman
+    href: https://github.com/ahuth/evolved-salesman
+    demo: https://ahuth.github.io/evolved-salesman
+    blurb: Genetic algorithm solving the traveling salesman problem.
+
+  - name: Orbital
+    href: https://github.com/ahuth/orbital
+    demo: https://ahuth.github.io/orbital
+    blurb: Simple simulation of bodies orbiting eachother.
+
+  - name: Raycast
+    href: https://github.com/ahuth/raycast
+    demo: https://ahuth.github.io/raycast
+    blurb: Implementation of a primitive 3d graphics technique called raycasting. In React.
+
+  - name: Raytrace
+    href: https://github.com/ahuth/raytrace
+    demo: https://ahuth.github.io/raytrace
+    blurb: Simple raytracer following [Literate Raytracer](https://tmcw.github.io/literate-raytracer/) by Tom MacWright.
+
+  - name: Tetris
+    href: https://github.com/ahuth/tetris
+    demo: https://ahuth.github.io/tetris
+    blurb: Classic Tetris game... in React, because why not.
+
+  - name: Waves
+    href: https://github.com/ahuth/waves
+    demo: https://ahuth.github.io/waves
+    blurb: Visualization of sine waves and their combinations.

@@ -19,18 +19,11 @@
     <section>
       <h2>Projects</h2>
       <ul>
-        <li><a href="https://github.com/ahuth/automata">Automata</a> <a href="https://ahuth.github.io/automata">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/bit-adder">Bit Adder</a> <a href="https://ahuth.github.io/bit-adder">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/cog">Cog</a> <a href="https://ahuth.github.io/cog">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/conway">Conway</a> <a href="https://ahuth.github.io/conway">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/conway2">Conway2</a> <a href="https://ahuth.github.io/conway2">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/evolved-salesman">Evolved Salesman</a> <a href="https://ahuth.github.io/evolved-salesman">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/orbital">Orbital</a> <a href="https://ahuth.github.io/orbital">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/raycast">Raycast</a> <a href="https://ahuth.github.io/raycast">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/raytrace">Raytrace</a> <a href="https://ahuth.github.io/raytrace">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/standfast">Standfast</a></li>
-        <li><a href="https://github.com/ahuth/tetris">Tetris</a> <a href="https://ahuth.github.io/tetris">(Demo)</a></li>
-        <li><a href="https://github.com/ahuth/waves">Waves</a> <a href="https://ahuth.github.io/waves">(Demo)</a></li>
+        {% for project in projects | sort(attribute='name') %}
+        <li>
+          <a href="{{ project.href }}">{{ project.name }}</a>{% if project.demo %} <a href="{{ project.demo }}">(Demo)</a>{% endif %}
+        </li>
+        {% endfor %}
       </ul>
     </section>
   </main>
