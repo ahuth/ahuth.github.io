@@ -7,7 +7,7 @@ import * as Secrets from './secrets';
 
 const secrets = Secrets.read('./secrets.json');
 const pageFilePaths = glob.sync('src/pages/**/*.html', { nodir: true });
-const articleFilePaths = glob.sync('src/articles/**/*.md', { nodir: true });
+const articleFilePaths = glob.sync('content/articles/**/*.md', { nodir: true });
 
 // Create the build directory if necessary.
 execSync('mkdir -p build');
