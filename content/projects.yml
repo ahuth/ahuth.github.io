@@ -13,7 +13,7 @@ projects:
   - name: Cog
     href: https://github.com/ahuth/cog
     demo: https://ahuth.github.io/cog
-    blurb: Dynamic generation of SVGs, based off of [React Icons](http://jxnblk.com/react-icons/) by Brent Jackson.
+    blurb: Dynamic generation of SVGs, based off of <a href="http://jxnblk.com/react-icons/">React Icons</a> by Brent Jackson.
 
   - name: Conway
     href: https://github.com/ahuth/conway
@@ -43,7 +43,7 @@ projects:
   - name: Raytrace
     href: https://github.com/ahuth/raytrace
     demo: https://ahuth.github.io/raytrace
-    blurb: Simple raytracer following [Literate Raytracer](https://tmcw.github.io/literate-raytracer/) by Tom MacWright.
+    blurb: Simple raytracer following <a href="https://tmcw.github.io/literate-raytracer/">Literate Raytracer</a> by Tom MacWright.
 
   - name: Tetris
     href: https://github.com/ahuth/tetris
