@@ -8,7 +8,15 @@
     <p>Hi, my name is Andrew 👋. I'm a software engineer in San Francisco. See some of my work on <a href="https://github.com/ahuth">GitHub</a>, or send me an <a href="mailto:andrew@huth.me">email</a>.</p>
   </header>
   <main>
-    <section class="fl w-100 w-50-ns">
+    <section>
+      <h2>Articles</h2>
+      <ol reversed>
+        {% for article in articles | sort(attribute='date') | reverse %}
+        <li><a href="{{ article.subPath }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </section>
+    <section>
       <h2>Projects</h2>
       <ul>
         <li><a href="https://github.com/ahuth/automata">Automata</a> <a href="https://ahuth.github.io/automata">(Demo)</a></li>
@@ -24,14 +32,6 @@
         <li><a href="https://github.com/ahuth/tetris">Tetris</a> <a href="https://ahuth.github.io/tetris">(Demo)</a></li>
         <li><a href="https://github.com/ahuth/waves">Waves</a> <a href="https://ahuth.github.io/waves">(Demo)</a></li>
       </ul>
-    </section>
-    <section class="fl w-100 w-50-ns">
-      <h2>Articles</h2>
-      <ol reversed>
-        {% for article in articles | sort(attribute='date') | reverse %}
-        <li><a href="{{ article.subPath }}">{{ article.title }}</a></li>
-        {% endfor %}
-      </ol>
     </section>
   </main>
 </div>
