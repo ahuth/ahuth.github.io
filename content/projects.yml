@@ -47,7 +47,7 @@ projects:
 
   - name: Raytrace 2
     href: https://github.com/ahuth/raytrace2
-    blurb: Raytracer based on <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Raytracing in One Weekend</a>.
+    blurb: Raytracer based on <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a>.
 
   - name: Tetris
     href: https://github.com/ahuth/tetris
