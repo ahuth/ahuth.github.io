@@ -25,6 +25,10 @@ projects:
     demo: https://ahuth.github.io/conway2
     blurb: Much more performant game of life than my previous one.
 
+  - name: Emitter Gates
+    href: https://github.com/ahuth/emitter-gates
+    blurb: Simulation of logic gates using Node EventEmitters.
+
   - name: Evolved Salesman
     href: https://github.com/ahuth/evolved-salesman
     demo: https://ahuth.github.io/evolved-salesman
