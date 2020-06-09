@@ -4,7 +4,6 @@
   "private": true,
   "description": "Personal homepage.",
   "author": "Andrew Huth",
-  "license": "MIT",
   "homepage": "https://ahuth.github.io",
   "scripts": {
     "build": "ts-node -T ./scripts/build",
