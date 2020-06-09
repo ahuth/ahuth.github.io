@@ -10,6 +10,7 @@ const secrets = Secrets.read('./secrets.json');
 const pageFilePaths = glob.sync('src/pages/**/*.html', { nodir: true });
 const articleFilePaths = glob.sync('content/articles/**/*.md', { nodir: true });
 const projectsFilePath = 'content/projects.yml';
+const outputDirectory = 'build';
 
 // Create the build directory if necessary.
 execSync('mkdir -p build');
@@ -19,12 +20,12 @@ const projects = Projects.read(projectsFilePath);
 
 // Read each markdown article file, convert to html, and write to the build directory.
 const articles = articleFilePaths.map(Article.read);
-const articleOutput = articles.map((article) => Output.fromArticle(article, secrets));
+const articleOutput = articles.map((article) => Output.fromArticle(outputDirectory, article, secrets));
 articleOutput.forEach(Output.write);
 
 // Read each html page and write to the build directory.
 const pages = pageFilePaths.map(Page.read);
-const pageOutput = pages.map(page => Output.fromPage(page, articles, projects, secrets));
+const pageOutput = pages.map(page => Output.fromPage(outputDirectory, page, articles, projects, secrets));
 pageOutput.forEach(Output.write);
 
 // Move every "static" file into the build directory.

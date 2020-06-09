@@ -13,7 +13,7 @@ type Output = {
   path: string,
 };
 
-export function fromArticle(article: Article, secrets?: Secrets): Output {
+export function fromArticle(outputDirectory: string, article: Article, secrets?: Secrets): Output {
   const content = nunjucks.render('layouts/article.html', {
     analyticsId: secrets?.analyticsId,
     articleTitle: article.title,
@@ -24,11 +24,12 @@ export function fromArticle(article: Article, secrets?: Secrets): Output {
 
   return {
     content,
-    path: path.join('build', article.subPath),
+    path: path.join(outputDirectory, article.subPath),
   };
 }
 
 export function fromPage(
+  outputDirectory: string,
   page: Page,
   articles: Article[],
   projects: Projects,
@@ -42,7 +43,7 @@ export function fromPage(
 
   return {
     content,
-    path: path.join('build', page.subPath),
+    path: path.join(outputDirectory, page.subPath),
   };
 }
 
