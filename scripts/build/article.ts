@@ -26,7 +26,7 @@ export type Type = Article;
 export function read(filePath: string): Article {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
-  const subPath = Paths.replaceExtension(filePath.replace('src/', ''), 'html');
+  const subPath = Paths.replaceExtension(filePath.replace('content/', ''), 'html');
   const formattedDate = format(parseISO(frontMatter.data.date), 'yyyy-MM-dd');
 
   return {
