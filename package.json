@@ -8,7 +8,7 @@
   "scripts": {
     "build": "URL_ROOT=\"$PWD/build/\" ts-node -T ./scripts/build",
     "build:prod": "URL_ROOT=https://ahuth.github.io ts-node -T ./scripts/build",
-    "clean": "rm -rf ./build/*",
+    "clean": "rm -rf ./build",
     "deploy": "gh-pages -b master -d build -t",
     "lint": "eslint --ext .js,.ts scripts/",
     "prebuild": "yarn run clean",
