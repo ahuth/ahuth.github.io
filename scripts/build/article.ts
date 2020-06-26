@@ -1,7 +1,9 @@
 import hljs from 'highlight.js';
 import markdownIt from 'markdown-it';
 import matter from 'gray-matter';
+import path from 'path';
 import { format, parseISO } from 'date-fns';
+import { Type as Environment } from './environment';
 import * as Paths from './paths';
 
 const renderer = markdownIt({
@@ -19,15 +21,17 @@ type Article = {
   rendered: string,
   subPath: string,
   title: string,
+  url: string,
 };
 
 export type Type = Article;
 
-export function read(filePath: string): Article {
+export function read(filePath: string, environment: Environment): Article {
   const frontMatter = matter.read(filePath);
   const rendererMarkdown = renderer.render(frontMatter.content);
-  const subPath = Paths.replaceExtension(filePath.replace('content/', ''), 'html');
   const formattedDate = format(parseISO(frontMatter.data.date), 'yyyy-MM-dd');
+  const subPath = Paths.replaceExtension(filePath.replace('content/', ''), 'html');
+  const url = path.join(environment.urlRoot, subPath);
 
   return {
     date: frontMatter.data.date,
@@ -35,5 +39,6 @@ export function read(filePath: string): Article {
     rendered: rendererMarkdown,
     subPath,
     title: frontMatter.data.title,
+    url,
   };
 }

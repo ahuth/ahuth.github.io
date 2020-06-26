@@ -1,11 +1,13 @@
 import glob from 'glob';
 import { execSync } from 'child_process';
 import * as Article from './article';
+import * as Environment from './environment';
 import * as Output from './output';
 import * as Page from './page';
 import * as Projects from './projects';
 import * as Secrets from './secrets';
 
+const environment = Environment.read(process.env);
 const secrets = Secrets.read('./secrets.json');
 const pageFilePaths = glob.sync('src/pages/**/*.html', { nodir: true });
 const articleFilePaths = glob.sync('content/articles/**/*.md', { nodir: true });
@@ -19,12 +21,12 @@ execSync('mkdir -p build');
 const projects = Projects.read(projectsFilePath);
 
 // Read each markdown article file, convert to html, and write to the build directory.
-const articles = articleFilePaths.map(Article.read);
+const articles = articleFilePaths.map((filePath) => Article.read(filePath, environment));
 const articleOutput = articles.map((article) => Output.fromArticle(outputDirectory, article, secrets));
 articleOutput.forEach(Output.write);
 
 // Read each html page and write to the build directory.
-const pages = pageFilePaths.map(Page.read);
+const pages = pageFilePaths.map((filePath) => Page.read(filePath, environment));
 const pageOutput = pages.map(page => Output.fromPage(outputDirectory, page, articles, projects, secrets));
 pageOutput.forEach(Output.write);
 
