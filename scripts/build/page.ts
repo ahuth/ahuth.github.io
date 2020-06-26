@@ -1,13 +1,11 @@
 import path from 'path';
-import { Type as Environment } from './environment';
+import type { Environment } from './environment';
 
-type Page = {
+export type Page = {
   localPath: string,
   subPath: string,
   url: string,
 }
-
-export type Type = Page;
 
 export function read(filePath: string, environment: Environment): Page {
   const localPath = filePath.replace(/^src\//, '');

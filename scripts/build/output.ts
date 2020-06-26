@@ -1,10 +1,10 @@
 import fs from 'fs';
 import nunjucks from 'nunjucks';
 import path from 'path';
-import { Type as Article } from './article';
-import { Type as Page } from './page';
-import { Type as Projects } from './projects';
-import { Type as Secrets } from './secrets';
+import type { Article } from './article';
+import type { Page } from './page';
+import type { Projects } from './projects';
+import type { Secrets } from './secrets';
 
 nunjucks.configure('src', { autoescape: false });
 

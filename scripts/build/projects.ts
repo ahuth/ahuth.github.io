@@ -8,9 +8,7 @@ type Project = {
   name: string,
 };
 
-type Projects = Project[];
-
-export type Type = Projects;
+export type Projects = Project[];
 
 export function read(filePath: string): Projects {
   const file = fs.readFileSync(filePath, 'utf8');

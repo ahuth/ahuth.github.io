@@ -1,8 +1,6 @@
-type Environment = {
+export type Environment = {
   urlRoot: string;
 }
-
-export type Type = Environment;
 
 export function read(env: NodeJS.ProcessEnv): Environment {
   if (!env.URL_ROOT) {

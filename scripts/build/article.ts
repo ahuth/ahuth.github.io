@@ -3,7 +3,7 @@ import markdownIt from 'markdown-it';
 import matter from 'gray-matter';
 import path from 'path';
 import { format, parseISO } from 'date-fns';
-import { Type as Environment } from './environment';
+import type { Environment } from './environment';
 import * as Paths from './paths';
 
 const renderer = markdownIt({
@@ -15,7 +15,7 @@ const renderer = markdownIt({
   },
 });
 
-type Article = {
+export type Article = {
   date: string,
   formattedDate: string,
   rendered: string,
@@ -23,8 +23,6 @@ type Article = {
   title: string,
   url: string,
 };
-
-export type Type = Article;
 
 export function read(filePath: string, environment: Environment): Article {
   const frontMatter = matter.read(filePath);
