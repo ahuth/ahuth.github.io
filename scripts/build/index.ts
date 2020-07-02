@@ -22,12 +22,12 @@ const projects = Projects.read(projectsFilePath);
 
 // Read each markdown article file, convert to html, and write to the build directory.
 const articles = articleFilePaths.map((filePath) => Article.read(filePath, environment));
-const articleOutput = articles.map((article) => Output.fromArticle(outputDirectory, article, secrets));
+const articleOutput = articles.map((article) => Output.fromArticle(outputDirectory, article, environment, secrets));
 articleOutput.forEach(Output.write);
 
 // Read each html page and write to the build directory.
 const pages = pageFilePaths.map((filePath) => Page.read(filePath, environment));
-const pageOutput = pages.map(page => Output.fromPage(outputDirectory, page, articles, projects, secrets));
+const pageOutput = pages.map(page => Output.fromPage(outputDirectory, page, articles, projects, environment, secrets));
 pageOutput.forEach(Output.write);
 
 // Move every "static" file into the build directory.
