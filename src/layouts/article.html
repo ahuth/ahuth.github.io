@@ -1,22 +1,25 @@
 {% extends "layouts/application.html" %}
 
 {% block content %}
-<main class="ph4-ns pv4 mw7 center-ns">
-  <nav>
-    <a href="/">← Home</a>
-  </nav>
-  <article>
-    <header>
-      <h1>{{ articleTitle }}</h1>
-      <time datetime="{{ date }}">{{ date }}</time>
-    </header>
-    <div>
-      {{ markdownContent }}
-    </div>
-    <footer>
-      <hr />
-      <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
-    </footer>
-  </article>
-</main>
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h2>Andrew Huth</h2>
+    {% include "sections/nav.html" %}
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>{{ articleTitle }}</h1>
+        <time datetime="{{ date }}">{{ date }}</time>
+      </header>
+      <div>
+        {{ markdownContent }}
+      </div>
+      <footer>
+        <hr />
+        <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
+    </article>
+  </main>
+</div>
 {% endblock %}
