@@ -5,28 +5,10 @@
 <div class="ph4-ns mw7 center-ns">
   <header>
     <h1>Andrew Huth</h1>
-    <p>Hi, my name is Andrew 👋. I'm a software engineer in San Francisco. See some of my work on <a href="https://github.com/ahuth">GitHub</a>, or send me an <a href="mailto:andrew@huth.me">email</a>.</p>
+    {% include "sections/nav.html" %}
   </header>
   <main>
-    <section>
-      <h2>Articles</h2>
-      <ol reversed>
-        {% for article in articles | sort(attribute='date') | reverse %}
-        <li><time class="courier" datetime="{{ article.formattedDate }}">{{ article.formattedDate }}</time> - <a href="{{ article.url }}">{{ article.title }}</a></li>
-        {% endfor %}
-      </ol>
-    </section>
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        {% for project in projects | sort(attribute='name') %}
-        <li class="mb1">
-          <a href="{{ project.href }}">{{ project.name }}</a>{% if project.demo %} (<a href="{{ project.demo }}">Demo</a>){% endif %}
-          <span>{{ project.blurb }}</span>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
+    <p>Hi, my name is Andrew 👋. I'm a software engineer in San Francisco, with expertise in frontend infrastructure and accessibility. See some of my work on <a href="https://github.com/ahuth">GitHub</a>, or send me an <a href="mailto:andrew@huth.me">email</a>.</p>
   </main>
 </div>
 {% endblock %}

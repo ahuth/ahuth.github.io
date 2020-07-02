@@ -2,9 +2,11 @@ import fs from 'fs';
 import nunjucks from 'nunjucks';
 import path from 'path';
 import type { Article } from './article';
+import type { Environment } from './environment';
 import type { Page } from './page';
 import type { Projects } from './projects';
 import type { Secrets } from './secrets';
+import * as Navigation from './navigation';
 
 nunjucks.configure('src', { autoescape: false });
 
@@ -13,12 +15,18 @@ type Output = {
   path: string,
 };
 
-export function fromArticle(outputDirectory: string, article: Article, secrets?: Secrets): Output {
+export function fromArticle(
+  outputDirectory: string,
+  article: Article,
+  environment: Environment,
+  secrets?: Secrets,
+): Output {
   const content = nunjucks.render('layouts/article.html', {
     analyticsId: secrets?.analyticsId,
     articleTitle: article.title,
     date: article.formattedDate,
     markdownContent: article.rendered,
+    navigation: Navigation.read(environment),
     pageTitle: article.title,
   });
 
@@ -33,11 +41,13 @@ export function fromPage(
   page: Page,
   articles: Article[],
   projects: Projects,
+  environment: Environment,
   secrets?: Secrets,
 ): Output {
   const content = nunjucks.render(page.localPath, {
     analyticsId: secrets?.analyticsId,
     articles,
+    navigation: Navigation.read(environment),
     projects,
   });
 
