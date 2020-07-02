@@ -1,4 +1,3 @@
-import path from 'path';
 import type { Environment } from './environment';
 
 export type Navigation = {
@@ -10,7 +9,7 @@ export type Navigation = {
 export function read(environment: Environment): Navigation {
   return {
     homePath: environment.urlRoot,
-    projectsPath: path.join(environment.urlRoot, 'projects'),
-    articlesPath: path.join(environment.urlRoot, 'articles'),
+    projectsPath: environment.urlRoot + '/projects',
+    articlesPath: environment.urlRoot + '/articles',
   };
 }

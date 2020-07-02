@@ -1,7 +1,6 @@
 import hljs from 'highlight.js';
 import markdownIt from 'markdown-it';
 import matter from 'gray-matter';
-import path from 'path';
 import { format, parseISO } from 'date-fns';
 import type { Environment } from './environment';
 import * as Paths from './paths';
@@ -29,7 +28,7 @@ export function read(filePath: string, environment: Environment): Article {
   const rendererMarkdown = renderer.render(frontMatter.content);
   const formattedDate = format(parseISO(frontMatter.data.date), 'yyyy-MM-dd');
   const subPath = Paths.replaceExtension(filePath.replace('content/', ''), 'html');
-  const url = path.join(environment.urlRoot, subPath);
+  const url = environment.urlRoot + '/' + subPath;
 
   return {
     date: frontMatter.data.date,
