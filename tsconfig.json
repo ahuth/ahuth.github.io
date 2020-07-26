@@ -9,6 +9,7 @@
       "noEmit": true,
       "noImplicitAny": true,
       "moduleResolution": "node",
+      "skipLibCheck": true,
       "strict": true
     },
     "include": ["scripts"]
