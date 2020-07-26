@@ -1,8 +1,11 @@
 import fs from 'fs';
+import * as zod from 'zod';
 
-export type Secrets = {
-  analyticsId?: string;
-}
+const schema = zod.object({
+  analyticsId: zod.string().optional(),
+});
+
+export type Secrets = zod.infer<typeof schema>;
 
 export function read(secretsPath: string): Secrets {
   if (!fs.existsSync(secretsPath)) {
@@ -12,5 +15,5 @@ export function read(secretsPath: string): Secrets {
   const file = String(fs.readFileSync(secretsPath));
   const contents = JSON.parse(file);
 
-  return contents;
+  return schema.parse(contents);
 }
