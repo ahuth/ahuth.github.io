@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Logic Gates in JavaScript</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.1.1/styles/atom-one-dark.css" />
+  <style>
+    @media not print {
+      a { color: deepskyblue; }
+
+      body {
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      .hljs-comment {
+        color: gray;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      font-size: 1.125rem;
+    }
+
+    pre { font-size: 1rem }
+  </style>
+</head>
+
+<body class="lh-copy">
+
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h2>Andrew Huth</h2>
+    <nav>
+  <ul class="list pl0">
+    <li class="dib pr1"><a href="https://ahuth.github.io">Home</a></li>
+    <li class="dib ph1"><a href="https://ahuth.github.io/articles">Articles</a></li>
+  </ul>
+</nav>
+
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>Logic Gates in JavaScript</h1>
+        <time datetime="2020-05-18">2020-05-18</time>
+      </header>
+      <div>
+        <p><a href="http://www.charlespetzold.com/code/">Code, by Charles Petzold</a>, is a fascinating look at building computers from the ground up. Starting in Chapter 11, it walks through creating logic gates. These can be used (amongst other things) to add numbers together.</p>
+<p>My first thought was to try to build some of these myself. However, I’m not sure of where to get the necessary supplies, and not how to solder. I’m not even sure if soldering is required (or how to spell soldering).</p>
+<p>What I can do is implement logic gates out in code. Let’s try it.</p>
+<p>An AND gate can be thought of as two switches connected by a wire in series. Both of the switches would have to be pressed for a signal to pass through the wire.</p>
+<p>Using the traditional representation of 0 for low (or no) voltage, and 1 for high voltage, we can write this in JavaScript as</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">and</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">if</span> (a) {
+    <span class="hljs-keyword">if</span> (b) {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+and(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 0</span>
+and(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 0</span>
+and(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 0</span>
+and(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 1</span>
+</code></pre>
+<p>Likewise, we can build an OR gate with two parallel switches. A signal would pass through the wire if either switch was pressed.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">or</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">if</span> (a) { <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; }
+  <span class="hljs-keyword">if</span> (b) { <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+or(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 0</span>
+or(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 1</span>
+or(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 1</span>
+or(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 1</span>
+</code></pre>
+<p>Notice that we can sort of see the structure of the logic gates in the code. The AND gate looks like it’s in series, due to the nested conditionals. The OR gate looks like it’s in parallel, with each conditional executing independently.</p>
+<p>Next, we need an inverter (or NOT)</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invert</span>(<span class="hljs-params">input</span>) </span>{
+  <span class="hljs-keyword">if</span> (input) { <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; }
+  <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+invert(<span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 1</span>
+invert(<span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 0</span>
+</code></pre>
+<p>We can use the inverter and AND to create NAND. Think of it as the inverse of AND - it returns 0 only when both inputs are 1.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nand</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> invert(and(a, b));
+}
+
+nand(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 1</span>
+nand(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 1</span>
+nand(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 1</span>
+nand(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 0</span>
+</code></pre>
+<p>By combining AND, OR, and NAND we can create the last gate we’ll need - exclusive or (XOR). It returns 1 if, and only if, one of its inputs is 1.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">xor</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> and(
+    or(a, b),
+    nand(a, b),
+  );
+}
+
+xor(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 0</span>
+xor(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 1</span>
+xor(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; 1</span>
+xor(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 0</span>
+</code></pre>
+<p>(Exercise for the reader: implement XOR using only NAND gates)</p>
+<p>So far, so good. Nothing too crazy, yet. But how can we use these to add binary numbers together?</p>
+<p>Let’s think about how we add decimal numbers - for example, 16 + 7.</p>
+<pre><code> 16
++ 7
+ --
+ ??
+</code></pre>
+<p>We start by adding together the least significant digits. 6 plus 7 is 13. We use the digit 3, but carry the 1 forward to the next addition. For the next digit, we add 1 (from 16), 0 (from the 07), and the carried 1, leaving us with 2. Combining the digits, we get 23.</p>
+<pre><code> 1
+ 16
++ 7
+ --
+ 23
+</code></pre>
+<p>For binary numbers, it’s exactly the same. We add each bit of two numbers together, and carry forward 1 if necessary. For a single bit, this looks like the following:</p>
+<pre><code>0 + 0 = 0
+0 + 1 = 1
+1 + 0 = 1
+1 + 1 = 10
+</code></pre>
+<p>There are two components to the result - the sum itself, and a potential &quot;carry&quot; that will be applied to the next digit:</p>
+<pre><code>0 + 0 = 0 sum and 0 carry
+0 + 1 = 1 sum and 0 carry
+1 + 0 = 1 sum and 0 carry
+1 + 1 = 0 sum and 1 carry
+</code></pre>
+<p>In the 1 + 1 example, we carry forward 1 to the next binary digit, resulting in 10 (or 2 in decimal).</p>
+<p>What’s interesting here is that the &quot;sum&quot; portion of the result has the same output as XOR, and carry has the same output as AND. We can use those logic gates to implement this logic, creating what’s called a &quot;half adder&quot;.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">halfAdder</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">sum</span>: xor(a, b),
+    <span class="hljs-attr">carry</span>: and(a, b),
+  };
+}
+
+halfAdder(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 0 }</span>
+halfAdder(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 0 }</span>
+halfAdder(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 0 }</span>
+halfAdder(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 1 }</span>
+</code></pre>
+<p>This doesn’t quite get us what we need (which is why it’s only a &quot;half&quot; adder). To really add binary digits together, we need to be able to handle a possible &quot;carry&quot; from the addition of previous digits.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fullAdder</span>(<span class="hljs-params">a, b, carryIn</span>) </span>{
+  <span class="hljs-keyword">const</span> initialAddition = halfAdder(a, b);
+  <span class="hljs-keyword">const</span> additionWithCarry = halfAdder(carryIn, initialAddition.sum);
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">sum</span>: additionWithCarry.sum,
+    <span class="hljs-attr">carry</span>: or(initialAddition.carry, additionWithCarry.carry),
+  };
+}
+
+fullAdder(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 0 }</span>
+fullAdder(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 0 }</span>
+fullAdder(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 0 }</span>
+fullAdder(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 1 }</span>
+fullAdder(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 0 }</span>
+fullAdder(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 1 }</span>
+fullAdder(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 0, carry: 1 }</span>
+fullAdder(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; { sum: 1, carry: 1 }</span>
+</code></pre>
+<p>With a full adder we can add each digit in a number together, and carry forward the &quot;carry&quot; to each digit. For two 4-bit numbers (0-16), this looks like:</p>
+<pre><code class="language-js"><span class="hljs-comment">// I’ve chosen to represent binary numbers as an array where</span>
+<span class="hljs-comment">// the least significant digit is first.</span>
+<span class="hljs-keyword">const</span> numberA = [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]; <span class="hljs-comment">// 5</span>
+<span class="hljs-keyword">const</span> numberB = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]; <span class="hljs-comment">// 14</span>
+
+<span class="hljs-comment">// Add each digit together. Initially the &quot;carry&quot; is 0, and</span>
+<span class="hljs-comment">// we bring each addition’s &quot;carry&quot; forward to the next.</span>
+<span class="hljs-keyword">const</span> first = fullAdder(numberA[<span class="hljs-number">0</span>], numberB[<span class="hljs-number">0</span>], <span class="hljs-number">0</span>);
+<span class="hljs-keyword">const</span> second = fullAdder(numberA[<span class="hljs-number">1</span>], numberB[<span class="hljs-number">1</span>], first.carry);
+<span class="hljs-keyword">const</span> third = fullAdder(numberA[<span class="hljs-number">2</span>], numberB[<span class="hljs-number">2</span>], second.carry);
+<span class="hljs-keyword">const</span> fourth = fullAdder(numberA[<span class="hljs-number">3</span>], numberB[<span class="hljs-number">3</span>], third.carry);
+
+<span class="hljs-keyword">const</span> result = [
+  first.sum,
+  second.sum,
+  third.sum,
+  fourth.sum,
+  fourth.carry,
+];
+<span class="hljs-comment">// [1, 1, 0, 0, 1]  =&gt; 19</span>
+</code></pre>
+<p>(Exercise for the reader: implement this in a loop so that numbers of any size can be added)</p>
+<p>Note that any remaining carry is added as the last digit, and the output number can have more bits than the inputs. This makes sense as two 4-bit numbers can add up to a 5-bit number.</p>
+<p>The circuit we’ve created is called a &quot;ripple adder&quot;. Modern computers tend to implement addition a little bit differently for performance reasons, but they could use this design.</p>
+<p>I still think it would be fun to try to build this with physical wires and transistors. But one of the nice things about software is we can simulate things and learn about how they work, without needing to build something physical.</p>
+
+      </div>
+      <footer>
+        <hr />
+        <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
+    </article>
+  </main>
+</div>
+
+
+</body>
+
+</html>

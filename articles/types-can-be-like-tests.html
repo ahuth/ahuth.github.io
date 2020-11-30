@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Types Can Be Like Tests</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.1.1/styles/atom-one-dark.css" />
+  <style>
+    @media not print {
+      a { color: deepskyblue; }
+
+      body {
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      .hljs-comment {
+        color: gray;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      font-size: 1.125rem;
+    }
+
+    pre { font-size: 1rem }
+  </style>
+</head>
+
+<body class="lh-copy">
+
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h2>Andrew Huth</h2>
+    <nav>
+  <ul class="list pl0">
+    <li class="dib pr1"><a href="https://ahuth.github.io">Home</a></li>
+    <li class="dib ph1"><a href="https://ahuth.github.io/articles">Articles</a></li>
+  </ul>
+</nav>
+
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>Types Can Be Like Tests</h1>
+        <time datetime="2020-01-25">2020-01-25</time>
+      </header>
+      <div>
+        <p>This is sure to upset some people, but here goes: writing types can fulfill the same role as writing tests. Particularly tests in test-driven development. Let me explain.</p>
+<p>One way of thinking about tests is that well-written ones check that the behavior of our code is what we expect it to be.</p>
+<p>Another way of thinking about them, though, is that they influence how we write our code. We write the minimum amount needed to make the tests pass, and then refactor. From this standpoint, types can be used in a similar way.</p>
+<p>Frequently I find myself writing code and not knowing the best way to proceed. Consider a function in <a href="https://www.typescriptlang.org/">TypeScript</a> for a <a href="https://github.com/ahuth/automata">cellular automata</a> that computes the next iteration from a set of rules.</p>
+<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params">row: Row, rules: Rule[]</span>): <span class="hljs-title">Row</span> </span>{
+  <span class="hljs-comment">// ??? What do I put here?</span>
+}
+</code></pre>
+<p>For this particular cellular automata we'll end up comparing the &quot;neighborhood&quot; of cells that are close together, in order to compute the next value of a particular cell. Not sure how to do that, yet, but let's write a placeholder function with types.</p>
+<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">neighbors</span>(<span class="hljs-params">row: Row</span>): <span class="hljs-title">cell</span>[][] </span>{
+  <span class="hljs-keyword">return</span> [];
+}
+</code></pre>
+<p>And now we can &quot;use&quot; it and ensure everything type-checks.</p>
+<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params">row: Row, rules: Rule[]</span>): <span class="hljs-title">Row</span> </span>{
+  <span class="hljs-keyword">return</span> neighbors(row).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">neighbors</span>) </span>{
+    <span class="hljs-keyword">const</span> rule = Rule.find(rules, neighbors);
+    <span class="hljs-keyword">return</span> rule.output;
+  });
+}
+</code></pre>
+<p>Even though we haven't figured out all the code, we've used the types to help us figure out how to implement <code>next</code>. And now that we know that everything type checks, we can go implement the rest of the functionality we need. The exact example here isn't important (I happened to work on a <a href="https://ahuth.github.io/automata/">cellular automata</a> recently, so it's top of mind). But for me, using types upfront help guide the implementation, much in the same way that tests can.</p>
+
+      </div>
+      <footer>
+        <hr />
+        <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
+    </article>
+  </main>
+</div>
+
+
+</body>
+
+</html>

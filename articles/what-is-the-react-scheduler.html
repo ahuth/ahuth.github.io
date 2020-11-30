@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What is the React Scheduler?</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.1.1/styles/atom-one-dark.css" />
+  <style>
+    @media not print {
+      a { color: deepskyblue; }
+
+      body {
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      .hljs-comment {
+        color: gray;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      font-size: 1.125rem;
+    }
+
+    pre { font-size: 1rem }
+  </style>
+</head>
+
+<body class="lh-copy">
+
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h2>Andrew Huth</h2>
+    <nav>
+  <ul class="list pl0">
+    <li class="dib pr1"><a href="https://ahuth.github.io">Home</a></li>
+    <li class="dib ph1"><a href="https://ahuth.github.io/articles">Articles</a></li>
+  </ul>
+</nav>
+
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>What is the React Scheduler?</h1>
+        <time datetime="2020-03-31">2020-03-31</time>
+      </header>
+      <div>
+        <p>(Everything discussed here is for <a href="https://github.com/facebook/react/releases/tag/v16.13.0">React version 16.13.0</a>)</p>
+<p>While researching React’s “fiber” architecture, I came across some interesting things that I didn’t expect. One of these is the React scheduler. It, along with Fiber, is central to React’s ability to maintain a responsive UI when under heavy load (such as when animations are running, or when expensive calculations are repeatedly done).</p>
+<p>So what is it, and how does it work?</p>
+<p>From what I can tell, it’s a system allowing React to schedule tasks of different priorities onto <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Javascript’s single-threaded event loop</a>.</p>
+<p>Due to this single-threaded nature, only one thing at a time can run at a time in Javascript. Any code that React is running can block the browser from responding to user input, scrolling the page, or even updating the UI.</p>
+<p>React’s scheduler handles this by allowing callbacks to be enqueued with different priorities. By allowing higher-priority callbacks to take precedence over lower-priority ones, it can do a better job of maintaining a responsive UI.</p>
+<p>The only caveat to this is that it’s easy for high-priority work to constantly prevent other work from running (<a href="https://en.wikipedia.org/wiki/Starvation_(computer_science)">a problem known as starvation</a>). To prevent this, each priority level has a timeout associated with it. After the timeout, the scheduler will go ahead and run the callback, even if there is higher priority work.</p>
+<p>Priorities are defined in <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/SchedulerPriorities.js#L14-L18">a file called SchedulerPriorities</a>, believe it or not. They are:</p>
+<ul>
+<li>Immediate (<a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L54">no timeout</a>, and these take precedence over other priorities)</li>
+<li>User blocking (<a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L56">250ms timeout</a>)</li>
+<li>Normal (<a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L57">5s timeout</a>)</li>
+<li>Low (<a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L58">10s timeout</a>)</li>
+<li>Idle (<a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L60">essentially an infinite timeout</a>, and these are not guaranteed to run)</li>
+</ul>
+<p>Some examples of tasks with different priorities are:</p>
+<ul>
+<li><a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/react-reconciler/src/ReactFiberWorkLoop.js#L1752-L1755">Updating a “root” component in the DOM</a> is immediate.</li>
+<li><a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/react-dom/src/events/ReactDOMEventListener.js#L298-L307">Handling browser events such as “click”</a> is user blocking.</li>
+<li><a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/react-reconciler/src/ReactFiberWorkLoop.js#L2242-L2246">Running effects</a> is normal.</li>
+</ul>
+<p>Tasks are stored in a <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/SchedulerMinHeap.js">min-heap</a>, ordered by their <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L316">expiration time</a>. This is the time the task was enqueued, plus the timeout of the task’s priority level. Once work is enqueued, the scheduler <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L343">sets a timeout with its own callback</a>. This in turn executes as many of the scheduled callbacks as it can, until <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/Scheduler.js#L174x">control is yielded back to the browser</a>.</p>
+<p>Right now it looks like the scheduler decides to yield back to the browser <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/forks/SchedulerHostConfig.default.js#L162-L166">every 5 milliseconds</a>. However, there is some code to detect the presence of a proposed browser API called isInputPending (behind a feature flag), and <a href="https://github.com/facebook/react/blob/730389b9d3865cb6d5c85e94b9b66f96e391718e/packages/scheduler/src/forks/SchedulerHostConfig.default.js#L145">use that if available</a>.</p>
+<p>And that’s the React scheduler. Let me know if I’ve got anything here wrong, or if anything isn’t as clear as it should be.</p>
+
+      </div>
+      <footer>
+        <hr />
+        <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
+    </article>
+  </main>
+</div>
+
+
+</body>
+
+</html>

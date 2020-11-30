@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The First Time SICP Blew My Mind</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.1.1/styles/atom-one-dark.css" />
+  <style>
+    @media not print {
+      a { color: deepskyblue; }
+
+      body {
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      .hljs-comment {
+        color: gray;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      font-size: 1.125rem;
+    }
+
+    pre { font-size: 1rem }
+  </style>
+</head>
+
+<body class="lh-copy">
+
+<div class="ph4-ns mw7 center-ns">
+  <header>
+    <h2>Andrew Huth</h2>
+    <nav>
+  <ul class="list pl0">
+    <li class="dib pr1"><a href="https://ahuth.github.io">Home</a></li>
+    <li class="dib ph1"><a href="https://ahuth.github.io/articles">Articles</a></li>
+  </ul>
+</nav>
+
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>The First Time SICP Blew My Mind</h1>
+        <time datetime="2019-08-23">2019-08-23</time>
+      </header>
+      <div>
+        <p><a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure and Interpretation of Computer Programs</a> is an introduction to computer science textbook used by MIT during the 80's and 90's. It uses <a href="https://en.wikipedia.org/wiki/Scheme_%28programming_language%29">Scheme</a> to teach the principles of computer programming, plus a lot of recursion, abstraction, and (my favorite) programming by wishful thinking.</p>
+<p>For some reason, I still remember the first time it blew my mind. The second chapter introduces a data structure called a cons cell. These are essentially a pair.</p>
+<pre><code class="language-js"><span class="hljs-comment">// In JavaScript</span>
+
+<span class="hljs-keyword">const</span> cell = cons(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></pre>
+<p>Historically, Scheme uses <code>car</code> to get the first item in a pair, and <code>cdr</code> to get the second. You can think of these as <code>getFirst</code> and <code>getSecond</code>.</p>
+<pre><code class="language-js">getFirst(cell); <span class="hljs-comment">// =&gt; 1</span>
+getSecond(cell); <span class="hljs-comment">// =&gt; 2</span>
+</code></pre>
+<p>From here we can create layers of abstractions. Imagine using <code>cons</code> to combine two numbers into a point. Two points can be combined to create a line.</p>
+<p>We can even use <code>cons</code> to create linked lists of points, lines, or anything else we want.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> rectangle = cons(line1, cons(line2, cons(line3, cons(line4, <span class="hljs-literal">null</span>))));
+</code></pre>
+<p>After building up several such abstractions, an interesting point is brought up. How is a cons cell itself constructed? One obvious way would be to use an array.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cons</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> [a, b];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFirst</span>(<span class="hljs-params">pair</span>) </span>{
+  <span class="hljs-keyword">return</span> pair[<span class="hljs-number">0</span>];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSecond</span>(<span class="hljs-params">pair</span>) </span>{
+  <span class="hljs-keyword">return</span> pair[<span class="hljs-number">1</span>];
+}
+</code></pre>
+<p>There is another way. We can use closures to create a data structure out of nothing but functions.</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cons</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> fn(a, b);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFirst</span>(<span class="hljs-params">pair</span>) </span>{
+  <span class="hljs-keyword">return</span> pair(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSecond</span>(<span class="hljs-params">pair</span>) </span>{
+  <span class="hljs-keyword">return</span> pair(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b);
+}
+</code></pre>
+<p>Harold Abelson mentions in the <a href="https://www.youtube.com/watch?v=ymsbTVLbyN4&amp;list=PLE18841CABEA24090&amp;index=24">corresponding lectures</a> that this idea might be terrifying. I see his point.</p>
+<p>Our layers of abstraction don't require anything as concrete or stable as an array or other data structure. All we need are functions.</p>
+<p>However, when I first encountered this, I wasn't terrified. I was ecstatic. Our whole tower of abstraction is built on foundations that are hidden from us. And when done correctly, we can even change our implemenetation without affecting other layers.</p>
+<p>See my <a href="https://github.com/ahuth/sicp">SICP exercise solutions on Github</a>.</p>
+<hr>
+<p>Edits:</p>
+<ul>
+<li>2020-02-04 - Updated the second implementation to <a href="https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_0lwlon">sjl's recommendation</a>.</li>
+<li>2020-02-04 - Simplified the second example again, based on <a href="https://lobste.rs/s/jee87g/first_time_sicp_blew_my_mind#c_isgq1v">brandonbloom's recommendation</a>.</li>
+<li>2020-02-05 - Added more detail about why this was mind blowing for me.</li>
+</ul>
+
+      </div>
+      <footer>
+        <hr />
+        <p>Have thoughts on this? Let me know at <a href="mailto:andrew@huth.me">andrew@huth.me</a>.</p>
+      </footer>
+    </article>
+  </main>
+</div>
+
+
+</body>
+
+</html>
