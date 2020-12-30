@@ -2,7 +2,7 @@ clean:
 		rm -rf ./public/ ./resources/
 
 build: clean
-		hugo --buildDrafts
+		hugo
 
 deploy: build
 		npx gh-pages@3.0.0 -d public
