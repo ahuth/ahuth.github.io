@@ -1,6 +1,6 @@
 # Articles
 
-All files inside the `articles` directory are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+All files inside the `content/blog` directory are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 # Other files
 

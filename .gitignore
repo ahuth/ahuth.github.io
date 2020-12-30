@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 
+# hugo
+/public/
+/resources/
+
 # testing
 /coverage
 

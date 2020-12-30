@@ -1,3 +1,8 @@
 # ahuth.github.io
 
-Old personal homepage. All new content is at https://huth.me.
+Personal website.
+
+Commands:
+- `make build` - create a static build
+- `make clean` - delete the static build files
+- `make start` - run the development server
