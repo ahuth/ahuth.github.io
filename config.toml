@@ -2,3 +2,7 @@ baseURL = "http://ahuth.github.io/"
 languageCode = "en-us"
 theme = "hugo-bearblog"
 title = "Andrew Huth"
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
