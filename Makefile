@@ -4,6 +4,9 @@ clean:
 build: clean
 		hugo --buildDrafts
 
+deploy: build
+		npx gh-pages -d public
+
 new:
 		hugo new blog/$(slug).md
 
