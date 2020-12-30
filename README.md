@@ -5,4 +5,5 @@ Personal website.
 Commands:
 - `make build` - create a static build
 - `make clean` - delete the static build files
+- `make new slug=<POST_FILE_NAME>` - create a new post
 - `make start` - run the development server
