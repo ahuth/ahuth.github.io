@@ -1,5 +1,5 @@
 clean:
-		rm -rf ./public/
+		rm -rf ./public/ ./resources/
 
 build: clean
 		hugo --buildDrafts
