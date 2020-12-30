@@ -1,7 +1,7 @@
 clean:
 		rm -rf ./public/
 
-build:
+build: clean
 		hugo --buildDrafts
 
 new:
