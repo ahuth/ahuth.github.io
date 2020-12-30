@@ -1,14 +1,14 @@
 clean:
-		rm -rf ./public/ ./resources/
+	rm -rf ./public/ ./resources/
 
 build: clean
-		hugo
+	hugo
 
 deploy: build
-		npx gh-pages@3.0.0 -d public
+	npx gh-pages@3.0.0 -d public
 
 new:
-		hugo new blog/$(slug).md
+	hugo new blog/$(slug).md
 
 start:
-		hugo server --buildDrafts
+	hugo server --buildDrafts
