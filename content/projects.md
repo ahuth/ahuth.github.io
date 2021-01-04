@@ -12,6 +12,7 @@ menu = "main"
 - [Conway 3](https://github.com/ahuth/conway3) ([demo](https://ahuth.github.io/conway3)) - Third iteration of Conway's game of life.
 - [Emitter Gates](https://github.com/ahuth/emitter-gates) - Simulation of logic gates using Node EventEmitters.
 - [Evolved Salesman](https://github.com/ahuth/evolved-salesman) ([demo](https://ahuth.github.io/evolved-salesman)) - Genetic algorithm solving the traveling salesman problem.
+- [L-Systems](https://github.com/ahuth/l-systems) ([demo](https://ahuth.github.io/l-systems)) - Plant-like structures created via L-systems.
 - [Orbital](https://github.com/ahuth/orbital) ([demo](https://ahuth.github.io/orbital)) - Simple simulation of orbiting bodies.
 - [Raycast](https://github.com/ahuth/raycast) ([demo](https://ahuth.github.io/raycast)) - React implementation of raycasting.
 - [Raytrace](https://github.com/ahuth/raytrace) ([demo](https://ahuth.github.io/raytrace)) -  Simple raytracer following [Literate Raytracer](https://tmcw.github.io/literate-raytracer).
