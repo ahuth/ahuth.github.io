@@ -6,6 +6,7 @@ menu = "main"
 # Projects
 
 - [Automata](https://github.com/ahuth/automata) ([demo](https://ahuth.github.io/automata)) - One-dimensional cellular automata.
+- [Barista](https://github.com/ahuth/barista) ([demo](https://ahuth.github.io/barista)) - Text-based pseudo-game about making coffee.
 - [Bit Adder](https://github.com/ahuth/bit-adder) ([demo](https://ahuth.github.io/bit-adder)) - Simulation of a logic circuit implementing a binary adder.
 - [Conway](https://github.com/ahuth/conway) ([demo](https://ahuth.github.io/conway)) - Conway's game of life in React.
 - [Conway 2](https://github.com/ahuth/conway2) ([demo](https://ahuth.github.io/conway2)) - Much more performant game of life than my previous one.
