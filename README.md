@@ -7,6 +7,7 @@ Personal website.
 In order to develop this site, you'll need these dependencies.
 
 - [Hugo](https://gohugo.io/), which generates the site.
+- [make](https://www.gnu.org/software/make/), for running commands.
 - [npx](https://github.com/npm/npx), for deploying. Normally this comes bundled with [npm](https://www.npmjs.com/get-npm).
 
 ## Cloning
