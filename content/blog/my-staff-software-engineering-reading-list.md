@@ -6,7 +6,7 @@ tags = ["reading","staff-engineering"]
 
 After reading [Four books professional developers should read](https://notes.eatonphil.com/books-developers-should-read.html), by Phil Eaton, I was inspired to write my own list. Here's my opinion about what staff software engineers (or people wanting to increase their seniority) should read.
 
-1. [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201), by Jon Ousterhout (ISBN 13: 978-0761939306).
+1. [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201), by Jon Ousterhout (ISBN 13: 978-1732102200).
 
    A pretty short book about what abstraction is, and how to make good abstractions. Even though the examples are written in C++, this has been very relevant to me for thinking about React components and design systems.
 
