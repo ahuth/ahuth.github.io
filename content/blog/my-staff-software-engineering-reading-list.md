@@ -4,7 +4,11 @@ date = "2021-02-04T16:10:46-08:00"
 tags = ["reading","staff-engineering"]
 +++
 
-After reading [Four books professional developers should read](https://notes.eatonphil.com/books-developers-should-read.html), by Phil Eaton, I was inspired to write my own list. Here's my opinion about what staff software engineers (or people wanting to increase their seniority) should read.
+After reading [Four books professional developers should read](https://notes.eatonphil.com/books-developers-should-read.html), by Phil Eaton, I was inspired to write my own engineering reading list.
+
+Originally I thought of this as a "staff engineering" reading list, because I probably wouldn't have appreciated these earlier in my career. When starting out, my reading was mostly about the specifics of using Ruby on Rails, HTML, and CSS. Which was great, and worked well for me.
+
+But while the books in this list have been useful for me as an engineering leader, anybody at any level can get a lot out of them. Here they are:
 
 1. [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201), by Jon Ousterhout (ISBN 13: 978-1732102200).
 
@@ -12,7 +16,7 @@ After reading [Four books professional developers should read](https://notes.eat
 
 2. [Mastery Teaching](https://www.amazon.com/Madeline-Hunter%E2%80%B2s-Mastery-Teaching-Instructional/dp/076193930X/ref=pd_lpo_14_t_0/147-8104678-0634432?_encoding=UTF8&pd_rd_i=076193930X&pd_rd_r=a2e03438-4ada-4d17-a987-642486853da7&pd_rd_w=4AFJD&pd_rd_wg=JBMNt&pf_rd_p=16b28406-aa34-451d-8a2e-b3930ada000c&pf_rd_r=G3W4M5X5PMF7RV0XEPJ5&psc=1&refRID=G3W4M5X5PMF7RV0XEPJ5), by Madeline Hunter (ISBN: 978-0761939306).
 
-   A book about classroom teaching? Yes. So much of my job is teaching. Not only by instructing others, but also by presentations and documentation. Madeline's masterpiece is full of ideas that I use every day.
+   A book about classroom teaching? Oh yes. So much of my job is teaching. Not only by instructing others, but also by presentations and documentation. Madeline's masterpiece is full of ideas that I use every day.
 
 3. [The Pyramid Principle](https://www.amazon.com/gp/product/0960191038/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1), by Barbara Minto (ISBN: 978-0960191031).
 
@@ -32,9 +36,9 @@ Two others that are great for specific interests are
 
   I work on accessibility, so am biased towards this pick. If you work on websites or web applications, though, it's the best I've found about accessibility, covering the why and how (in HTML and CSS).
 
-Most of these aren't actually about writing code. For staff (or senior++) engineers, technical skill is important. But also a given.
+Most of these aren't actually about writing code. For experienced engineers, technical skill is important. But also a given.
 
-We've gotten to where we're at in part because of technical skill. The next level, however, also requires some more people, organization, and communication skills. These books have been helpful for me to get there.
+We've gotten to where we're at in part because of technical skill. The next level, however, also requires some more people, organization, and communication skills. These books have helped me be more effective.
 
 ---
 
