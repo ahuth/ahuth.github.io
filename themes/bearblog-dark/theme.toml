@@ -1,0 +1,14 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Hugo Bear Blog Dark"
+min_version = "0.73.0"
+# https://gohugo.io/content-management/taxonomies#default-taxonomies
+# https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template
+# https://gohugo.io/templates/taxonomy-templates/#example-list-all-site-tags
+
+# If porting an existing theme
+[original]
+  name = "Hugo ʕ•ᴥ•ʔ Bear Blog"
+  homepage = "https://themes.gohugo.io/hugo-bearblog/"
+  repo = "https://github.com/janraasch/hugo-bearblog"

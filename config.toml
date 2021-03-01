@@ -1,6 +1,6 @@
 baseURL = "http://ahuth.github.io/"
 languageCode = "en-us"
-theme = "hugo-bearblog"
+theme = "bearblog-dark"
 title = "Andrew Huth"
 
 [markup]
