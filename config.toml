@@ -1,8 +1,0 @@
-baseURL = "http://ahuth.github.io/"
-languageCode = "en-us"
-theme = "bearblog-dark"
-title = "Andrew Huth"
-
-[markup]
-  [markup.highlight]
-    style = "dracula"
