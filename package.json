@@ -1,7 +1,7 @@
 {
   "name": "ahuth.github.io",
   "scripts": {
-    "build": "tailwindcss --input ./input.css --output ./styles.css",
+    "build": "tailwindcss --input ./input.css --output ./styles-v1.css",
     "build:prod": "npm run build -- --minify",
     "start": "npm run build -- --watch"
   },
