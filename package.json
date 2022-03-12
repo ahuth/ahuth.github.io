@@ -1,9 +1,7 @@
 {
   "name": "ahuth.github.io",
   "scripts": {
-    "build": "tailwindcss --input ./input.css --output ./styles-v2.css",
-    "build:prod": "npm run build -- --minify",
-    "start": "npm run build -- --watch"
+    "css": "tailwindcss --input ./input.css --minify | pbcopy"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23"
