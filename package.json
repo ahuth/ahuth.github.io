@@ -4,6 +4,6 @@
     "css": "tailwindcss --input ./input.css --minify | pbcopy"
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.3"
   }
 }
