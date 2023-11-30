@@ -9,7 +9,7 @@ const colors = [
   "text-cyan-300",
   "text-sky-300",
   "text-blue-300",
-  "text-fuschia-300",
+  "text-fuchsia-300",
   "text-indigo-300",
   "text-pink-300",
 ];
