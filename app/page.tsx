@@ -16,9 +16,14 @@ export default function Home() {
           See my writing at{" "}
           <Link href="https://andrewhuth.substack.com">
             andrewhuth.substack.com
-          </Link>{" "}
-          and code at{" "}
-          <Link href="https://github.com/ahuth">github.com/ahuth</Link>.
+          </Link>
+          , code at{" "}
+          <Link href="https://github.com/ahuth">github.com/ahuth</Link>, and
+          profile at{" "}
+          <Link href="https://www.linkedin.com/in/andrewhuth2">
+            linkedin.com/in/andrewhuth2
+          </Link>
+          .
         </p>
         <p>Random stuff:</p>
         <ul className="list-inside list-['➝_']">
