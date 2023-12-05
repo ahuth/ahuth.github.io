@@ -34,12 +34,12 @@ export default function Home() {
           </li>
           <li>
             <Link href="https://ahuth.github.io/conway4/">
-              Conway's Game of Life #4
+              Conway's Game of Life #4 (typescript)
             </Link>
           </li>
           <li>
             <Link href="https://ahuth.github.io/conway5/">
-              Conway's Game of Life #5
+              Conway's Game of Life #5 (wasm)
             </Link>
           </li>
           <li>
