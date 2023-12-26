@@ -25,7 +25,7 @@ export default function Home() {
           </li>
         </ul>
         <p>Random stuff</p>
-        <ul className="list-inside list-['➝_']">
+        <ul className="list-inside list-disc">
           <li>
             <Link href="https://ahuth.github.io/raycast/">
               Raycasting in React
