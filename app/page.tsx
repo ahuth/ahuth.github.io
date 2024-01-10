@@ -60,6 +60,11 @@ export default function Home() {
               EventEmitter-based logic gates
             </Link>
           </li>
+          <li>
+            <Link href="https://ahuth.github.io/stack-machine">
+              Stack machine
+            </Link>
+          </li>
         </ul>
       </div>
     </main>
