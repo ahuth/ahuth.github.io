@@ -1,8 +1,8 @@
 module.exports = {
-  arrowParens: "always",
+  arrowParens: 'always',
   bracketSpacing: false,
   experimentalTernaries: true,
-  plugins: ["prettier-plugin-tailwindcss"],
-  singleQuote: false,
-  trailingComma: "all",
+  plugins: ['prettier-plugin-tailwindcss'],
+  singleQuote: true,
+  trailingComma: 'all',
 };

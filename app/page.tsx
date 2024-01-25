@@ -1,14 +1,14 @@
-import {Permanent_Marker} from "next/font/google";
-import clsx from "clsx";
-import Link from "@/components/Link";
+import {Permanent_Marker} from 'next/font/google';
+import clsx from 'clsx';
+import Link from '@/components/Link';
 
-const permMark = Permanent_Marker({weight: "400", subsets: ["latin"]});
+const permMark = Permanent_Marker({weight: '400', subsets: ['latin']});
 
 export default function Home() {
   return (
     <main className="h-screen bg-black font-sans text-xl font-light text-gray-50 sm:pt-6">
       <div className="mx-auto flex max-w-2xl flex-col gap-2">
-        <h1 className={clsx("text-4xl", permMark.className)}>Andrew Huth</h1>
+        <h1 className={clsx('text-4xl', permMark.className)}>Andrew Huth</h1>
         <p>Programmer</p>
         <ul className="list-inside list-disc">
           <li>
