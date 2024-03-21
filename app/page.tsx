@@ -12,6 +12,9 @@ export default function Home() {
         <p>Programmer</p>
         <ul className="list-inside list-disc">
           <li>
+            <Link href="https://landslide.software">Work with me</Link>
+          </li>
+          <li>
             <Link href="https://andrewhuth.substack.com">Writing</Link>
           </li>
           <li>
