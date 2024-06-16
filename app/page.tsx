@@ -56,16 +56,8 @@ export default function Home() {
             <Link href="https://github.com/ahuth/raytrace2/">Raytrace #2</Link>
           </li>
           <li>
-            <Link href="https://ahuth.github.io/l-systems/">L-systems</Link>
-          </li>
-          <li>
             <Link href="https://ahuth.github.io/automata">
               Elementary cellular automata
-            </Link>
-          </li>
-          <li>
-            <Link href="https://github.com/ahuth/emitter-gates">
-              EventEmitter-based logic gates
             </Link>
           </li>
           <li>
