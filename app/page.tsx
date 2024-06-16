@@ -45,6 +45,11 @@ export default function Home() {
             </Link>
           </li>
           <li>
+            <Link href="https://ahuth.github.io/checkbox-life/">
+              Checkbox Life
+            </Link>
+          </li>
+          <li>
             <Link href="https://ahuth.github.io/tetris/">Tetris</Link>
           </li>
           <li>
