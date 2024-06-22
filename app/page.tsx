@@ -9,8 +9,9 @@ export default function Home() {
     <main className="h-screen bg-black font-sans text-xl font-light text-gray-50 sm:pt-6">
       <div className="mx-auto flex max-w-2xl flex-col gap-4">
         <h1 className={clsx('text-4xl', permMark.className)}>Andrew Huth</h1>
+        <p>Software engineer</p>
         <section>
-          <h2>Programmer</h2>
+          <h2>Links</h2>
           <ul className="list-inside list-disc">
             <li>
               <Link href="https://landslide.software">Work with me</Link>
