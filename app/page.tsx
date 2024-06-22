@@ -32,6 +32,14 @@ export default function Home() {
           </ul>
         </section>
         <section>
+          <h2>Courses</h2>
+          <ul className="list-inside list-disc">
+            <li>
+              <Link href="https://ahuth.gumroad.com/l/skhbw">Pro Git</Link>
+            </li>
+          </ul>
+        </section>
+        <section>
           <h2>Random stuff</h2>
           <ul className="list-inside list-disc">
             <li>
