@@ -30,7 +30,7 @@ export default function Home() {
           </ul>
         </section>
         <section>
-          <h2>Stuff</h2>
+          <h2>Projects</h2>
           <ul className="list-inside list-disc">
             <li>
               <Link href="https://ahuth.gumroad.com/l/skhbw">
