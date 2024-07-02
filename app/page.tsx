@@ -14,9 +14,6 @@ export default function Home() {
           <h2>Links</h2>
           <ul className="list-inside list-disc">
             <li>
-              <Link href="https://landslide.software">Work with me</Link>
-            </li>
-            <li>
               <Link href="https://andrewhuth.substack.com">Writing</Link>
             </li>
             <li>
