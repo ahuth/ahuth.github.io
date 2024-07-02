@@ -30,16 +30,13 @@ export default function Home() {
           </ul>
         </section>
         <section>
-          <h2>Courses</h2>
+          <h2>Stuff</h2>
           <ul className="list-inside list-disc">
             <li>
-              <Link href="https://ahuth.gumroad.com/l/skhbw">Pro Git</Link>
+              <Link href="https://ahuth.gumroad.com/l/skhbw">
+                Pro Git course
+              </Link>
             </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Random stuff</h2>
-          <ul className="list-inside list-disc">
             <li>
               <Link href="https://ahuth.github.io/raycast/">
                 Raycasting in React
