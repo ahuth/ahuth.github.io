@@ -75,6 +75,11 @@ export default function Home() {
                 Stack machine
               </Link>
             </li>
+            <li>
+              <Link href="https://ahuth.github.io/dice-concept-1">
+                Dice Concept #1
+              </Link>
+            </li>
           </ul>
         </section>
       </div>
