@@ -85,6 +85,11 @@ export default function Home() {
                 Branching Concept #1
               </Link>
             </li>
+            <li>
+              <Link href="https://ahuth.github.io/svg-morph-concept">
+                SVG morph concept
+              </Link>
+            </li>
           </ul>
         </section>
       </div>
