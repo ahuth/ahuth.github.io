@@ -14,7 +14,9 @@ type Props = {
 export default function RootLayout({children}: Props) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="mx-auto min-h-screen max-w-2xl bg-black font-sans text-xl font-light text-gray-50">
+        {children}
+      </body>
     </html>
   );
 }

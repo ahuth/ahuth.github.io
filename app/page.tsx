@@ -6,13 +6,18 @@ const permMark = Permanent_Marker({weight: '400', subsets: ['latin']});
 
 export default function Home() {
   return (
-    <main className="h-screen bg-black font-sans text-xl font-light text-gray-50 sm:pt-6">
-      <div className="mx-auto flex max-w-2xl flex-col gap-4">
+    <>
+      <header className="space-y-4 sm:pt-6">
         <h1 className={clsx('text-4xl', permMark.className)}>Andrew Huth</h1>
-        <p>Frontend software engineer</p>
+        <p>
+          Software engineer, focused on web tech. Especially Accessibility,
+          React, Remix, and Tailwind.
+        </p>
+      </header>
+      <main className="space-y-6 pt-4">
         <section>
-          <h2>Links</h2>
-          <ul className="list-inside list-disc">
+          <h2 className="sr-only">Links</h2>
+          <ul className="flex flex-wrap gap-2 sm:gap-4">
             <li>
               <Link href="https://andrewhuth.substack.com">Writing</Link>
             </li>
@@ -92,7 +97,7 @@ export default function Home() {
             </li>
           </ul>
         </section>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
