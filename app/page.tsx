@@ -34,121 +34,66 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        <section className="space-y-4">
+        <section>
           <h2>Projects</h2>
-          <ul>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/raycast/"
-              >
-                Raycast
+          <ul className="list-inside list-disc">
+            <li>
+              <Link href="https://ahuth.gumroad.com/l/skhbw">
+                Pro Git course
               </Link>
-              <span className="text-gray-300">Raycasting engine in React</span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/conway4/"
-              >
-                Conway 4
+            <li>
+              <Link href="https://ahuth.github.io/raycast/">
+                Raycasting in React
               </Link>
-              <span className="text-gray-300">
-                Optimized Conway's Game of Life in TypeScript
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/conway5/"
-              >
-                Conway 5
+            <li>
+              <Link href="https://ahuth.github.io/conway4/">
+                Conway's Game of Life #4 (typescript)
               </Link>
-              <span className="text-gray-300">
-                Conway's Game of Life in Web Assembly
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/checkbox-life/"
-              >
+            <li>
+              <Link href="https://ahuth.github.io/conway5/">
+                Conway's Game of Life #5 (wasm)
+              </Link>
+            </li>
+            <li>
+              <Link href="https://ahuth.github.io/checkbox-life/">
                 Checkbox Life
               </Link>
-              <span className="text-gray-300">
-                Conway's Game of Life in checkboxes
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/tetris/"
-              >
-                Tetris
-              </Link>
-              <span className="text-gray-300">Yep... Tetris in React</span>
+            <li>
+              <Link href="https://ahuth.github.io/tetris/">Tetris</Link>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://github.com/ahuth/raytrace2/"
-              >
+            <li>
+              <Link href="https://github.com/ahuth/raytrace2/">
                 Raytrace #2
               </Link>
-              <span className="text-gray-300">
-                Implementation of a ray tracer from "Ray Tracing in One Weekend"
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/automata"
-              >
-                Automata
-              </Link>
-              <span className="text-gray-300">
+            <li>
+              <Link href="https://ahuth.github.io/automata">
                 Elementary cellular automata
-              </span>
+              </Link>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/stack-machine"
-              >
+            <li>
+              <Link href="https://ahuth.github.io/stack-machine">
                 Stack machine
               </Link>
-              <span className="text-gray-300">
-                Very basic POC of a Zachtronics-style game
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/dice-concept-1"
-              >
+            <li>
+              <Link href="https://ahuth.github.io/dice-concept-1">
                 Dice Concept #1
               </Link>
-              <span className="text-gray-300">Dice game mechanic concept</span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/branching-concept-1"
-              >
+            <li>
+              <Link href="https://ahuth.github.io/branching-concept-1">
                 Branching Concept #1
               </Link>
-              <span className="text-gray-300">
-                Branching narrative game mechanic concept
-              </span>
             </li>
-            <li className="md:flex">
-              <Link
-                className="block w-52 flex-shrink-0"
-                href="https://ahuth.github.io/svg-morph-concept"
-              >
+            <li>
+              <Link href="https://ahuth.github.io/svg-morph-concept">
                 SVG morph concept
               </Link>
-              <span className="text-gray-300">SVG animation concept</span>
             </li>
           </ul>
         </section>
