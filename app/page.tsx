@@ -90,6 +90,11 @@ export default function Home() {
                 SVG morph concept
               </Link>
             </li>
+            <li>
+              <Link href="https://ahuth.github.io/sprite-concept-1">
+                Sprite concept #1
+              </Link>
+            </li>
           </ul>
         </section>
         <section>
