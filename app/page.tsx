@@ -99,20 +99,28 @@ export default function Home() {
               <Link href="https://chanzuckerberg.com/">
                 Chan Zuckerberg Initiative
               </Link>
-              , Senior Staff Software Engineer, 2020-Present
+              <span className="italic text-gray-300">
+                , Senior Staff Software Engineer, 2020-Present
+              </span>
             </li>
             <li>
-              <Link href="https://www.airbnb.com/">Airbnb</Link>, Software
-              Engineer, 2019-2020
+              <Link href="https://www.airbnb.com/">Airbnb</Link>
+              <span className="italic text-gray-300">
+                , Software Engineer, 2019-2020
+              </span>
             </li>
             <li>
-              <Link href="https://www.mavenlink.com/">Mavenlink</Link>, Senior
-              Software Engineer, 2014-2019
+              <Link href="https://www.mavenlink.com/">Mavenlink</Link>
+              <span className="italic text-gray-300">
+                , Senior Software Engineer, 2014-2019
+              </span>
             </li>
-            <li>Non-tech stuff, 2007-2014</li>
+            <li className="italic text-gray-300">Non-tech stuff, 2007-2014</li>
             <li>
-              <Link href="https://udayton.edu/">University of Dayton</Link>, BS,
-              Finance, 2003-2007
+              <Link href="https://udayton.edu/">University of Dayton</Link>
+              <span className="italic text-gray-300">
+                , BS, Finance, 2003-2007
+              </span>
             </li>
           </ul>
         </section>
