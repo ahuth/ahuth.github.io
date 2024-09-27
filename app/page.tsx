@@ -38,11 +38,6 @@ export default function Home() {
           <h2>Projects</h2>
           <ul className="list-inside list-disc">
             <li>
-              <Link href="https://ahuth.gumroad.com/l/skhbw">
-                Pro Git course
-              </Link>
-            </li>
-            <li>
               <Link href="https://ahuth.github.io/raycast/">
                 Raycasting in React
               </Link>
