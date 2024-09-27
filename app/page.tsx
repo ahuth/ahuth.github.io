@@ -7,7 +7,7 @@ const permMark = Permanent_Marker({weight: '400', subsets: ['latin']});
 export default function Home() {
   return (
     <>
-      <header className="space-y-4 sm:pt-6">
+      <header className="space-y-4">
         <h1 className={clsx('text-4xl', permMark.className)}>Andrew Huth</h1>
         <p>
           Software engineer, focused on web tech. Especially Accessibility,
@@ -89,6 +89,30 @@ export default function Home() {
               <Link href="https://ahuth.github.io/svg-morph-concept">
                 SVG morph concept
               </Link>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Work and education</h2>
+          <ul className="list-inside list-disc">
+            <li>
+              <Link href="https://chanzuckerberg.com/">
+                Chan Zuckerberg Initiative
+              </Link>
+              , Senior Staff Software Engineer, 2020-Present
+            </li>
+            <li>
+              <Link href="https://www.airbnb.com/">Airbnb</Link>, Software
+              Engineer, 2019-2020
+            </li>
+            <li>
+              <Link href="https://www.mavenlink.com/">Mavenlink</Link>, Senior
+              Software Engineer, 2014-2019
+            </li>
+            <li>Non-tech stuff, 2007-2014</li>
+            <li>
+              <Link href="https://udayton.edu/">University of Dayton</Link>, BS,
+              Finance, 2003-2007
             </li>
           </ul>
         </section>
