@@ -95,6 +95,11 @@ export default function Home() {
                 Sprite concept #1
               </Link>
             </li>
+            <li>
+              <Link href="https://ahuth.github.io/sprite-concept-2">
+                Sprite concept #2
+              </Link>
+            </li>
           </ul>
         </section>
         <section>
