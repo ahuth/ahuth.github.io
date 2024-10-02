@@ -100,6 +100,11 @@ export default function Home() {
                 Sprite concept #2
               </Link>
             </li>
+            <li>
+              <Link href="https://ahuth.github.io/flappy-flap-2">
+                Flappy Flap 2
+              </Link>
+            </li>
           </ul>
         </section>
         <section>
