@@ -109,7 +109,7 @@ export default function Home() {
         </section>
         <section>
           <h2>Work and education</h2>
-          <ul className="list-inside list-disc">
+          <ol className="list-inside list-disc" reversed>
             <li>
               <Link href="https://k-id.com/">k-ID</Link>
               <span className="italic text-gray-300">
@@ -143,7 +143,7 @@ export default function Home() {
                 , BS, Finance, 2003-2007
               </span>
             </li>
-          </ul>
+          </ol>
         </section>
       </main>
     </>
