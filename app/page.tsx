@@ -111,11 +111,17 @@ export default function Home() {
           <h2>Work and education</h2>
           <ul className="list-inside list-disc">
             <li>
+              <Link href="https://k-id.com/">k-ID</Link>
+              <span className="italic text-gray-300">
+                , Software Engineer, 2024-present
+              </span>
+            </li>
+            <li>
               <Link href="https://chanzuckerberg.com/">
                 Chan Zuckerberg Initiative
               </Link>
               <span className="italic text-gray-300">
-                , Senior Staff Software Engineer, 2020-Present
+                , Senior Staff Software Engineer, 2020-2024
               </span>
             </li>
             <li>
