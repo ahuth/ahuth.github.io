@@ -113,7 +113,7 @@ export default function Home() {
             <li>
               <Link href="https://k-id.com/">k-ID</Link>
               <span className="italic text-gray-300">
-                , Software Engineer, 2024-present
+                , Senior Software Engineer, 2024-present
               </span>
             </li>
             <li>
