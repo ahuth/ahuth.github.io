@@ -133,7 +133,7 @@ export default function Home() {
             <li>
               <Link href="https://www.mavenlink.com/">Mavenlink</Link>
               <span className="italic text-gray-300">
-                , Senior Software Engineer, 2014-2019
+                , Junior-Senior Software Engineer, 2014-2019
               </span>
             </li>
             <li className="italic text-gray-300">Non-tech stuff, 2007-2014</li>
