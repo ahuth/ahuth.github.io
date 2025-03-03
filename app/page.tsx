@@ -35,6 +35,45 @@ export default function Home() {
           </ul>
         </section>
         <section>
+          <h2>Work and education</h2>
+          <ol className="list-inside list-disc" reversed>
+            <li>
+              <Link href="https://k-id.com/">k-ID</Link>
+              <span className="italic text-gray-300">
+                , Senior Software Engineer, 2024-present
+              </span>
+            </li>
+            <li>
+              <Link href="https://chanzuckerberg.com/">
+                Chan Zuckerberg Initiative
+              </Link>
+              <span className="italic text-gray-300">
+                , Staff Software Engineer → Senior Staff Software Engineer,
+                2020-2024
+              </span>
+            </li>
+            <li>
+              <Link href="https://www.airbnb.com/">Airbnb</Link>
+              <span className="italic text-gray-300">
+                , Software Engineer, 2019-2020
+              </span>
+            </li>
+            <li>
+              <Link href="https://www.mavenlink.com/">Mavenlink</Link>
+              <span className="italic text-gray-300">
+                , Junior Software Engineer → Senior Software Engineer, 2014-2019
+              </span>
+            </li>
+            <li className="italic text-gray-300">Non-tech stuff, 2007-2014</li>
+            <li>
+              <Link href="https://udayton.edu/">University of Dayton</Link>
+              <span className="italic text-gray-300">
+                , BS, Finance, 2003-2007
+              </span>
+            </li>
+          </ol>
+        </section>
+        <section>
           <h2>Projects</h2>
           <ul className="list-inside list-disc">
             <li>
@@ -106,45 +145,6 @@ export default function Home() {
               </Link>
             </li>
           </ul>
-        </section>
-        <section>
-          <h2>Work and education</h2>
-          <ol className="list-inside list-disc" reversed>
-            <li>
-              <Link href="https://k-id.com/">k-ID</Link>
-              <span className="italic text-gray-300">
-                , Senior Software Engineer, 2024-present
-              </span>
-            </li>
-            <li>
-              <Link href="https://chanzuckerberg.com/">
-                Chan Zuckerberg Initiative
-              </Link>
-              <span className="italic text-gray-300">
-                , Staff Software Engineer → Senior Staff Software Engineer,
-                2020-2024
-              </span>
-            </li>
-            <li>
-              <Link href="https://www.airbnb.com/">Airbnb</Link>
-              <span className="italic text-gray-300">
-                , Software Engineer, 2019-2020
-              </span>
-            </li>
-            <li>
-              <Link href="https://www.mavenlink.com/">Mavenlink</Link>
-              <span className="italic text-gray-300">
-                , Junior Software Engineer → Senior Software Engineer, 2014-2019
-              </span>
-            </li>
-            <li className="italic text-gray-300">Non-tech stuff, 2007-2014</li>
-            <li>
-              <Link href="https://udayton.edu/">University of Dayton</Link>
-              <span className="italic text-gray-300">
-                , BS, Finance, 2003-2007
-              </span>
-            </li>
-          </ol>
         </section>
       </main>
     </>
