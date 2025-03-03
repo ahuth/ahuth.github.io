@@ -13,6 +13,10 @@ export default function Home() {
           Software engineer, working mostly with Accessibility, React,
           TypeScript, NextJS, Remix, and Tailwind.
         </p>
+        <p>
+          Want to work together on any of these? Send me a note at{' '}
+          <Link href="mailto:ahuth@huth.me">ahuth@huth.me</Link>.
+        </p>
       </header>
       <main className="space-y-6 pt-4">
         <section>
@@ -30,7 +34,7 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link href="mailto:hello@huth.me">Email</Link>
+              <Link href="mailto:ahuth@huth.me">Email</Link>
             </li>
           </ul>
         </section>
