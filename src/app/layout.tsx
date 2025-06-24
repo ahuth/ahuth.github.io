@@ -5,7 +5,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Andrew Huth',
   description:
-    'Software engineer, working mostly with Accessibility, React, TypeScript, NextJS, Remix, and Tailwind.',
+    'Computer programmer. Accessibility, React, TypeScript, NextJS, and Tailwind.',
 };
 
 type Props = {
