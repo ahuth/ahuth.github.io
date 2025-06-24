@@ -4,10 +4,12 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "npm run dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "next lint",
+    "start": "npm run dev",
     "types": "tsc --noEmit",
-    "validate": "npm run lint && npm run types"
+    "validate": "npm run format:check && npm run lint && npm run types"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -17,15 +19,15 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@types/lodash": "^4.17.18",
     "@types/node": "^22.13.8",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.21",
-    "eslint": "^8.57.0",
+    "eslint": "^9.29.0",
     "eslint-config-next": "^15.3.4",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.5.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.0",
     "prettier-plugin-tailwindcss": "^0.6.13",
