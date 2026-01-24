@@ -105,6 +105,9 @@ export default function Home() {
                 Flappy Flap 2
               </Link>
             </li>
+            <li>
+              <Link href="https://dailydone.work">Daily Done</Link>
+            </li>
           </ul>
         </section>
       </main>
