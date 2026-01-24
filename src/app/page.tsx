@@ -10,8 +10,8 @@ export default function Home() {
       <header className="space-y-4">
         <h1 className={clsx('text-4xl', permMark.className)}>Andrew Huth</h1>
         <p>
-          Computer programmer. Accessibility, React, TypeScript, NextJS, and
-          Tailwind.
+          Building accessible stuff for the web. Especially in React, Next,
+          TypeScript.
         </p>
       </header>
       <main className="space-y-6 pt-4">
