@@ -95,19 +95,6 @@ export default function Home() {
                 Sprite concept #1
               </Link>
             </li>
-            <li>
-              <Link href="https://ahuth.github.io/sprite-concept-2">
-                Sprite concept #2
-              </Link>
-            </li>
-            <li>
-              <Link href="https://ahuth.github.io/flappy-flap-2">
-                Flappy Flap 2
-              </Link>
-            </li>
-            <li>
-              <Link href="https://dailydone.work">Daily Done</Link>
-            </li>
           </ul>
         </section>
       </main>
